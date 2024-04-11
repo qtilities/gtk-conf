@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Exec=@PROJECT_ID@
+Icon=preferences-desktop-theme
+Categories=@PROJECT_CATEGORIES@;

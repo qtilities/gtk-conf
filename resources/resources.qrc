@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="info">about.md</file>
+        <file>authors</file>
+        <file alias="license">copying</file>
+    </qresource>
+</RCC>

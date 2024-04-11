@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogMain</class>
+ <widget class="QDialog" name="DialogMain">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="layout">
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>6</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="layContent">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <widget class="QListWidget" name="list">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="sizeAdjustPolicy">
+        <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+       </property>
+       <property name="currentRow">
+        <number>0</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>Themes</string>
+        </property>
+        <property name="icon">
+         <iconset theme="applications-graphics"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Font</string>
+        </property>
+        <property name="icon">
+         <iconset theme="preferences-desktop-font"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Other</string>
+        </property>
+        <property name="icon">
+         <iconset theme="preferences-desktop"/>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QStackedWidget" name="stack">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="page1">
+        <layout class="QGridLayout" name="layThemes">
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>6</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
+         <property name="bottomMargin">
+          <number>6</number>
+         </property>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-cursor-theme-name&lt;/h3&gt;
+&lt;p&gt;Name of the cursor theme to use.&lt;/p&gt;
+&lt;p&gt;Use NULL to use the default theme.&lt;/p&gt;
+&lt;p&gt;Default value: NULL&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Cursor:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="cbxCursorThemeName"/>
+         </item>
+         <item row="4" column="0" colspan="2">
+          <widget class="QWidget" name="wgtPreview" native="true"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-icon-theme-name&lt;/h3&gt;
+&lt;p&gt;Name of the icon theme to use.&lt;/p&gt;
+&lt;p&gt;See GtkIconTheme for details about how GTK handles icon themes.&lt;/p&gt;
+&lt;p&gt;Default value: Adwaita&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Icons:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="2">
+          <widget class="QGroupBox" name="gbxSystem">
+           <property name="title">
+            <string>System</string>
+           </property>
+           <layout class="QVBoxLayout" name="laySystem">
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QComboBox" name="cbxThemeName">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="toolTip">
+               <string>&lt;h3&gt;gtk-theme-name&lt;/h3&gt;
+&lt;p&gt;Name of the theme to load.&lt;/p&gt;
+&lt;p&gt;See GtkCssProvider for details about how GTK finds the CSS stylesheet for a theme.&lt;/p&gt;
+&lt;p&gt;Default value: Default&lt;/p&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkPreferDarkTheme">
+              <property name="toolTip">
+               <string>&lt;h3&gt;gtk-application-prefer-dark-theme&lt;/h3&gt;
+&lt;p&gt;Whether the application prefers to use a dark theme.&lt;/p&gt;
+&lt;p&gt;If a GTK theme includes a dark variant, it will be used instead of the configured theme.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;false&lt;/b&gt;&lt;/p&gt;</string>
+              </property>
+              <property name="text">
+               <string>Prefer dark theme</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="cbxIconThemeName"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="sbxCursorThemeSize">
+           <property name="maximum">
+            <number>512</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-cursor-theme-size&lt;/h3&gt;
+&lt;p&gt;The size to use for cursors.&lt;/p&gt;
+&lt;p&gt;0 means to use the default size.&lt;/p&gt;
+&lt;p&gt;Default value: 0&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Cursor size:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page2">
+        <layout class="QGridLayout" name="layFont">
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>6</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
+         <property name="bottomMargin">
+          <number>6</number>
+         </property>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-font-name&lt;/h3&gt;
+&lt;p&gt;The default font to use.&lt;/p&gt;
+&lt;p&gt;GTK uses the family name and size from this string.&lt;/p&gt;
+&lt;p&gt;Default value. Sans 10&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Default:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" colspan="2">
+          <widget class="QComboBox" name="cbxXftHintStyle">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">hintnone</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">hintslight</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">hintmedium</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">hintfull</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="lblResolution">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-xft-dpi&lt;/h3&gt;
+&lt;p&gt;The font resolution, in 1024 * dots/inch.&lt;/p&gt;
+&lt;p&gt;-1 to use the default value.&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Resolution:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="chkXftAntialias">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-xft-antialias&lt;/h3&gt;
+&lt;p&gt;Whether to antialias fonts.&lt;/p&gt;
+&lt;p&gt;The values are:&lt;/p&gt;
+&lt;p&gt;0 for no, 1 for yes or -1 for the system default.&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Enable Antialiasing</string>
+           </property>
+           <property name="tristate">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1" colspan="2">
+          <widget class="FontButton" name="fbnDefaultFont">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="0" colspan="3">
+          <spacer name="vspFont">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="chkXftHinting">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-xft-hinting&lt;/h3&gt;
+&lt;p&gt;Whether to enable font hinting.&lt;/p&gt;
+&lt;p&gt;The values are 0 for no, 1 for yes, or -1 for the system default.&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Enable Hinting</string>
+           </property>
+           <property name="tristate">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" colspan="2">
+          <widget class="QSpinBox" name="sbxXfdDpi">
+           <property name="minimum">
+            <number>-1</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>-1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-xft-hintstyle&lt;/h3&gt;
+&lt;p&gt;What degree of font hinting to use.&lt;/p&gt;
+&lt;p&gt;The possible vaues are&lt;/p&gt;
+&lt;p&gt;hintnone, hintslight, hintmedium, hintfull.&lt;/p&gt;
+&lt;p&gt;Default value: NULL&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Hinting style:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-xft-rgba&lt;/h3&gt;
+&lt;p&gt;The type of subpixel antialiasing to use.&lt;/p&gt;
+&lt;p&gt;The possible values are&lt;/p&gt;
+&lt;p&gt;none, rgb, bgr, vrgb, vbgr.&lt;/p&gt;
+&lt;p&gt;Note that GSK does not support subpixel antialiasing, and this setting has no effect on font rendering in GTK.&lt;/p&gt;
+&lt;p&gt;Default value: NULL&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Sub-pixel antialiasing:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="2">
+          <widget class="QComboBox" name="cbxXftRgba">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">none</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">rgb</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">bgr</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">vrgb</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">vbgr</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page3">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>6</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
+         <property name="bottomMargin">
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QGroupBox" name="gbxGUI">
+           <property name="title">
+            <string>GUI Options</string>
+           </property>
+           <layout class="QGridLayout" name="layGbxGUI">
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
+            <item row="0" column="0" colspan="2">
+             <widget class="QCheckBox" name="chkOverlayScrolling">
+              <property name="toolTip">
+               <string>&lt;h3&gt;gtk-overlay-scrolling&lt;/h3&gt;
+&lt;p&gt;Whether scrolled windows may use overlaid scrolling indicators.&lt;/p&gt;
+&lt;p&gt;If this is set to &lt;b&gt;false&lt;/b&gt;, scrolled windows will have permanent scrollbars.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;true&lt;/b&gt;&lt;/p&gt;</string>
+              </property>
+              <property name="text">
+               <string>Enable overlay scrolling</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QCheckBox" name="chkWarpSlider">
+              <property name="toolTip">
+               <string>&lt;h3&gt;gtk-primary-button-warps-slider&lt;/h3&gt;
+&lt;p&gt;If the value of this setting is &lt;b&gt;true&lt;/b&gt;, clicking the primary button in a &lt;b&gt;GtkRange&lt;/b&gt; trough will move the slider, and hence set the range’s value, to the point that you clicked.&lt;/p&gt;
+&lt;p&gt;If it is &lt;b&gt;false&lt;/b&gt;, a primary click will cause the slider/value to move by the range’s page-size towards the point clicked.&lt;/p&gt;
+&lt;p&gt;Whichever action you choose for the primary button, the other action will be available by holding &lt;b&gt;Shift&lt;/b&gt; and primary-clicking, or clicking the middle mouse button.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;true&lt;/b&gt;&lt;/p&gt;</string>
+              </property>
+              <property name="text">
+               <string>Primary button warps slider</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="gbxSound">
+           <property name="title">
+            <string>Sound effect</string>
+           </property>
+           <layout class="QVBoxLayout" name="layGbxSound">
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QCheckBox" name="chkEnableEventSounds">
+              <property name="toolTip">
+               <string>&lt;h3&gt;gtk-enable-event-sounds&lt;/h3&gt;
+&lt;p&gt;Whether to play any event sounds at all.&lt;/p&gt;
+&lt;p&gt;See the Sound Theme Specifications for more information on event sounds and sound themes.&lt;/p&gt;
+&lt;p&gt;GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;true&lt;/b&gt;&lt;/p&gt;</string>
+              </property>
+              <property name="text">
+               <string>Play event sounds</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkEnableInputFeedbackSounds">
+              <property name="toolTip">
+               <string>&lt;h3&gt;gtk-enable-input-feedback-sounds&lt;/h3&gt;
+&lt;p&gt;Whether to play event sounds as feedback to user input.&lt;/p&gt;
+&lt;p&gt;See the Sound Theme Specifications for more information on event sounds and sound themes.&lt;/p&gt;
+&lt;p&gt;GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;true&lt;/b&gt;&lt;/p&gt;</string>
+              </property>
+              <property name="text">
+               <string>Play event sounds as feedback to user input</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="gbxEnableRecentFiles">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-recent-files-enabled&lt;/h3&gt;
+&lt;p&gt;Whether GTK should keep track of items inside the recently used resources list.&lt;/p&gt;
+&lt;p&gt;If set to &lt;b&gt;false&lt;/b&gt;, the list will always be empty.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;true&lt;/b&gt;&lt;/p&gt;</string>
+           </property>
+           <property name="title">
+            <string>Recent files</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+           <layout class="QFormLayout" name="formLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label">
+              <property name="toolTip">
+               <string>&lt;h3&gt;gtk-recent-files-max-age&lt;/h3&gt;
+&lt;p&gt;The maximum age, in days, of the items inside the recently used resources list.&lt;/p&gt;
+&lt;p&gt;Items older than this setting will be excised from the list.&lt;/p&gt;
+&lt;p&gt;If set to 0, the list will always be empty; if set to -1, no item will be removed.&lt;/p&gt;
+&lt;p&gt;Default value: 30&lt;/p&gt;</string>
+              </property>
+              <property name="text">
+               <string>Max age:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QSpinBox" name="sbxRecentFilesMaxAge">
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="minimum">
+               <number>-1</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="vspOther">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="LayButtons">
+     <item>
+      <widget class="QPushButton" name="pbnAbout">
+       <property name="text">
+        <string>About</string>
+       </property>
+       <property name="icon">
+        <iconset theme="help-about"/>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Close|QDialogButtonBox::Reset|QDialogButtonBox::Save</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FontButton</class>
+   <extends>QPushButton</extends>
+   <header>src/FontButton.hpp</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>DialogMain</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>list</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stack</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>63</x>
+     <y>220</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
