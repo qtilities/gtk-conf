@@ -1,13 +1,16 @@
 #pragma once
 
+#include <QObject>
 #include <QString>
 
 typedef struct _GSettings GSettings;
 
-class Settings
+class Settings : public QObject
 {
+    Q_OBJECT
+
 public:
-    Settings();
+    Settings(QObject* parent = nullptr);
     ~Settings();
 
     void load();
@@ -69,6 +72,9 @@ public:
 
     QString xftRgba() const { return xftRgba_; }
     void setXftRgba(const QString& xftRgba) { xftRgba_ = xftRgba; }
+
+Q_SIGNALS:
+    void propertiesChanged();
 
 private:
     GSettings *guiSettings,

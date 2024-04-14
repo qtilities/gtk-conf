@@ -1,8 +1,20 @@
 #include "Settings.hpp"
 #include <gtk/gtk.h>
 
-Settings::Settings()
-    : guiSettings(g_settings_new("org.gnome.desktop.interface"))
+static gboolean
+on_change_event(GSettings */*gsettings*/,
+                gpointer   /*keys*/,
+                int        /*n_keys*/,
+                gpointer   settings)
+{
+    Settings* s = static_cast<Settings*>(settings);
+    Q_EMIT s->propertiesChanged();
+    return TRUE;
+}
+
+Settings::Settings(QObject* parent)
+    : QObject(parent)
+    , guiSettings(g_settings_new("org.gnome.desktop.interface"))
     , prvSettings(g_settings_new("org.gnome.desktop.privacy"))
     , sndSettings(g_settings_new("org.gnome.desktop.sound"))
     , enableEventSounds_(false)
@@ -17,6 +29,9 @@ Settings::Settings()
     , xftHinting_(0)
     , xftDpi_(0)
 {
+    g_signal_connect(G_OBJECT(guiSettings), "change-event", G_CALLBACK(on_change_event), this);
+    g_signal_connect(G_OBJECT(prvSettings), "change-event", G_CALLBACK(on_change_event), this);
+    g_signal_connect(G_OBJECT(sndSettings), "change-event", G_CALLBACK(on_change_event), this);
 }
 
 Settings::~Settings()

@@ -5,12 +5,13 @@
 
 #include <QDir>
 #include <QFileInfo>
+#include <QMessageBox>
 #include <QStandardPaths>
 
 DialogMain::DialogMain(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::DialogMain)
-    , settings(new Settings)
+    , settings(new Settings(this))
 {
 #define ENABLE_BUTTONS \
     reset->setEnabled(true); \
@@ -26,12 +27,20 @@ DialogMain::DialogMain(QWidget *parent)
     ui->cbxIconThemeName->addItems(findThemes(QStringLiteral("icons"), QStringLiteral("16x16"), QStringLiteral("scalable"), QStringLiteral("Adwaita")));
     ui->cbxThemeName->addItems(findThemes(QStringLiteral("themes"), QStringLiteral("/gtk-3.0/gtk.css"), QStringLiteral("Default")));
 
-    settings->load();
-    updateUi();
-
     QPushButton* reset = ui->buttonBox->button(QDialogButtonBox::Reset);
     QPushButton* save  = ui->buttonBox->button(QDialogButtonBox::Save);
     DISABLE_BUTTONS;
+
+    settings->load();
+    connect(settings, &Settings::propertiesChanged, [this, reset, save](){
+        QMessageBox::warning(this, tr("Settings changed"),
+            tr("Settings was changed by a different application.\n\n"
+               "You can reload the new settings by pressing the Reset button"
+               "or use Save if you want to keep the current ones.")
+            );
+        ENABLE_BUTTONS;
+    });
+    updateUi();
 
 #define CONNECT_CHECKBOX(NAME) \
     connect(ui->chk##NAME, &QCheckBox::toggled, [this, reset, save]() { \

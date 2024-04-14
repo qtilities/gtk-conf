@@ -31,6 +31,6 @@ private:
     ) const;
 
     Ui::DialogMain* ui;
-    const QScopedPointer<Settings> settings;
+    Settings* settings;
 };
 
