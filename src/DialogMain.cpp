@@ -38,11 +38,13 @@ DialogMain::DialogMain(QWidget *parent)
         settings->set##NAME(ui->chk##NAME->isChecked()); \
         ENABLE_BUTTONS; \
     })
+#if 0
 #define CONNECT_CHECKBOX_TRISTATE(NAME) \
     connect(ui->chk##NAME, &QCheckBox::clicked, [this, reset, save]() { \
         settings->set##NAME(fromCheckState(ui->chk##NAME->checkState())); \
         ENABLE_BUTTONS; \
     })
+#endif
 #define CONNECT_COMBOBOX(NAME) \
     connect(ui->cbx##NAME, &QComboBox::currentTextChanged, [this, reset, save]() { \
         settings->set##NAME(ui->cbx##NAME->currentText()); \
@@ -78,13 +80,17 @@ DialogMain::DialogMain(QWidget *parent)
     CONNECT_CHECKBOX(EnableEventSounds);
     CONNECT_CHECKBOX(EnableInputFeedbackSounds);
     CONNECT_CHECKBOX(OverlayScrolling);
+#if 0
     CONNECT_CHECKBOX(PreferDarkTheme);
     CONNECT_CHECKBOX(WarpSlider);
     CONNECT_CHECKBOX_TRISTATE(XftAntialias);
     CONNECT_CHECKBOX_TRISTATE(XftHinting);
-    CONNECT_COMBOBOX(ThemeName);
+#endif
+    CONNECT_COMBOBOX(ColorScheme);
     CONNECT_COMBOBOX(CursorThemeName);
+    CONNECT_COMBOBOX(FontAntialiasing);
     CONNECT_COMBOBOX(IconThemeName);
+    CONNECT_COMBOBOX(ThemeName);
     CONNECT_COMBOBOX(XftHintStyle);
     CONNECT_COMBOBOX(XftRgba);
     CONNECT_SPINBOX(CursorThemeSize);
@@ -105,24 +111,27 @@ DialogMain::~DialogMain()
 
 void DialogMain::updateUi()
 {
-    ui->chkPreferDarkTheme->setChecked(settings->preferDarkTheme());
+    ui->cbxColorScheme->setCurrentText(settings->colorScheme());
+//  ui->chkPreferDarkTheme->setChecked(settings->preferDarkTheme());
     ui->cbxCursorThemeName->setCurrentText(settings->cursorThemeName());
     ui->sbxCursorThemeSize->setValue(settings->cursorThemeSize());
     ui->chkEnableEventSounds->setChecked(settings->enableEventSounds());
     ui->chkEnableInputFeedbackSounds->setChecked(settings->enableInputFeedbackSounds());
+    ui->cbxFontAntialiasing->setCurrentText(settings->fontAntialiasing());
     ui->fbnDefaultFont->setFont(fromName(settings->fontName()));
     ui->cbxIconThemeName->setCurrentText(settings->iconThemeName());
     ui->chkOverlayScrolling->setChecked(settings->overlayScrolling());
-    ui->chkWarpSlider->setChecked(settings->warpSlider());
+//  ui->chkWarpSlider->setChecked(settings->warpSlider());
     ui->gbxEnableRecentFiles->setChecked(settings->enableRecentFiles());
     ui->sbxRecentFilesMaxAge->setValue(settings->recentFilesMaxAge());
     ui->cbxThemeName->setCurrentText(settings->themeName());
-    ui->chkXftAntialias->setCheckState(checkState(settings->xftAntialias()));
-    ui->chkXftHinting->setCheckState(checkState(settings->xftHinting()));
+//  ui->chkXftAntialias->setCheckState(checkState(settings->xftAntialias()));
+//  ui->chkXftDpi_->setCheckState(checkState(settings->xftDpi()));
+//  ui->chkXftHinting->setCheckState(checkState(settings->xftHinting()));
     ui->cbxXftHintStyle->setCurrentText(settings->xftHintStyle());
     ui->cbxXftRgba->setCurrentText(settings->xftRgba());
 }
-
+#if 0
 Qt::CheckState DialogMain::checkState(int state)
 {
     switch(state) {
@@ -142,7 +151,7 @@ int DialogMain::fromCheckState(Qt::CheckState state)
     default: return 0;
     }
 }
-
+#endif
 QFont DialogMain::fromName(const QString& fontName)
 {
     QFont font;

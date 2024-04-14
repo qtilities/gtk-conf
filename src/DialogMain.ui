@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>620</width>
+    <height>380</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="layout">
@@ -130,7 +130,7 @@
            <property name="title">
             <string>System</string>
            </property>
-           <layout class="QVBoxLayout" name="laySystem">
+           <layout class="QGridLayout" name="gridLayout">
             <property name="leftMargin">
              <number>6</number>
             </property>
@@ -143,7 +143,42 @@
             <property name="bottomMargin">
              <number>6</number>
             </property>
-            <item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="cbxColorScheme">
+              <item>
+               <property name="text">
+                <string>default</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>prefer-dark</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>prefer-light</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="chkPreferDarkTheme">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string>&lt;h3&gt;gtk-application-prefer-dark-theme&lt;/h3&gt;
+&lt;p&gt;Whether the application prefers to use a dark theme.&lt;/p&gt;
+&lt;p&gt;If a GTK theme includes a dark variant, it will be used instead of the configured theme.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;false&lt;/b&gt;&lt;/p&gt;</string>
+              </property>
+              <property name="text">
+               <string>Prefer dark theme</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" colspan="2">
              <widget class="QComboBox" name="cbxThemeName">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -156,19 +191,6 @@
 &lt;p&gt;Name of the theme to load.&lt;/p&gt;
 &lt;p&gt;See GtkCssProvider for details about how GTK finds the CSS stylesheet for a theme.&lt;/p&gt;
 &lt;p&gt;Default value: Default&lt;/p&gt;</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="chkPreferDarkTheme">
-              <property name="toolTip">
-               <string>&lt;h3&gt;gtk-application-prefer-dark-theme&lt;/h3&gt;
-&lt;p&gt;Whether the application prefers to use a dark theme.&lt;/p&gt;
-&lt;p&gt;If a GTK theme includes a dark variant, it will be used instead of the configured theme.&lt;/p&gt;
-&lt;p&gt;Default value: &lt;b&gt;false&lt;/b&gt;&lt;/p&gt;</string>
-              </property>
-              <property name="text">
-               <string>Prefer dark theme</string>
               </property>
              </widget>
             </item>
@@ -214,62 +236,11 @@
          <property name="bottomMargin">
           <number>6</number>
          </property>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_4">
-           <property name="toolTip">
-            <string>&lt;h3&gt;gtk-font-name&lt;/h3&gt;
-&lt;p&gt;The default font to use.&lt;/p&gt;
-&lt;p&gt;GTK uses the family name and size from this string.&lt;/p&gt;
-&lt;p&gt;Default value. Sans 10&lt;/p&gt;</string>
-           </property>
-           <property name="text">
-            <string>Default:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1" colspan="2">
-          <widget class="QComboBox" name="cbxXftHintStyle">
-           <item>
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string notr="true">hintnone</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string notr="true">hintslight</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string notr="true">hintmedium</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string notr="true">hintfull</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="lblResolution">
-           <property name="toolTip">
-            <string>&lt;h3&gt;gtk-xft-dpi&lt;/h3&gt;
-&lt;p&gt;The font resolution, in 1024 * dots/inch.&lt;/p&gt;
-&lt;p&gt;-1 to use the default value.&lt;/p&gt;</string>
-           </property>
-           <property name="text">
-            <string>Resolution:</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="0">
           <widget class="QCheckBox" name="chkXftAntialias">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="toolTip">
             <string>&lt;h3&gt;gtk-xft-antialias&lt;/h3&gt;
 &lt;p&gt;Whether to antialias fonts.&lt;/p&gt;
@@ -284,31 +255,11 @@
            </property>
           </widget>
          </item>
-         <item row="6" column="1" colspan="2">
-          <widget class="FontButton" name="fbnDefaultFont">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="autoDefault">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="0" colspan="3">
-          <spacer name="vspFont">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
          <item row="1" column="0">
           <widget class="QCheckBox" name="chkXftHinting">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="toolTip">
             <string>&lt;h3&gt;gtk-xft-hinting&lt;/h3&gt;
 &lt;p&gt;Whether to enable font hinting.&lt;/p&gt;
@@ -322,58 +273,11 @@
            </property>
           </widget>
          </item>
-         <item row="5" column="1" colspan="2">
-          <widget class="QSpinBox" name="sbxXfdDpi">
-           <property name="minimum">
-            <number>-1</number>
-           </property>
-           <property name="maximum">
-            <number>100</number>
-           </property>
-           <property name="value">
-            <number>-1</number>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="toolTip">
-            <string>&lt;h3&gt;gtk-xft-hintstyle&lt;/h3&gt;
-&lt;p&gt;What degree of font hinting to use.&lt;/p&gt;
-&lt;p&gt;The possible vaues are&lt;/p&gt;
-&lt;p&gt;hintnone, hintslight, hintmedium, hintfull.&lt;/p&gt;
-&lt;p&gt;Default value: NULL&lt;/p&gt;</string>
-           </property>
-           <property name="text">
-            <string>Hinting style:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_6">
-           <property name="toolTip">
-            <string>&lt;h3&gt;gtk-xft-rgba&lt;/h3&gt;
-&lt;p&gt;The type of subpixel antialiasing to use.&lt;/p&gt;
-&lt;p&gt;The possible values are&lt;/p&gt;
-&lt;p&gt;none, rgb, bgr, vrgb, vbgr.&lt;/p&gt;
-&lt;p&gt;Note that GSK does not support subpixel antialiasing, and this setting has no effect on font rendering in GTK.&lt;/p&gt;
-&lt;p&gt;Default value: NULL&lt;/p&gt;</string>
-           </property>
-           <property name="text">
-            <string>Sub-pixel antialiasing:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1" colspan="2">
+         <item row="3" column="1" colspan="2">
           <widget class="QComboBox" name="cbxXftRgba">
            <item>
             <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string notr="true">none</string>
+             <string notr="true">rgba</string>
             </property>
            </item>
            <item>
@@ -396,6 +300,152 @@
              <string notr="true">vbgr</string>
             </property>
            </item>
+          </widget>
+         </item>
+         <item row="12" column="0" colspan="3">
+          <spacer name="vspFont">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="lblResolution">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-xft-dpi&lt;/h3&gt;
+&lt;p&gt;The font resolution, in 1024 * dots/inch.&lt;/p&gt;
+&lt;p&gt;-1 to use the default value.&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Resolution:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-font-name&lt;/h3&gt;
+&lt;p&gt;The default font to use.&lt;/p&gt;
+&lt;p&gt;GTK uses the family name and size from this string.&lt;/p&gt;
+&lt;p&gt;Default value. Sans 10&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Default:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-xft-hintstyle&lt;/h3&gt;
+&lt;p&gt;What degree of font hinting to use.&lt;/p&gt;
+&lt;p&gt;The possible vaues are&lt;/p&gt;
+&lt;p&gt;hintnone, hintslight, hintmedium, hintfull.&lt;/p&gt;
+&lt;p&gt;Default value: NULL&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Hinting style:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1" colspan="2">
+          <widget class="QComboBox" name="cbxXftHintStyle">
+           <item>
+            <property name="text">
+             <string notr="true">none</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">slight</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">medium</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string notr="true">full</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="7" column="1" colspan="2">
+          <widget class="FontButton" name="fbnDefaultFont">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1" colspan="2">
+          <widget class="QSpinBox" name="sbxXfdDpi">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="minimum">
+            <number>-1</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>-1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-xft-rgba&lt;/h3&gt;
+&lt;p&gt;The type of subpixel antialiasing to use.&lt;/p&gt;
+&lt;p&gt;The possible values are&lt;/p&gt;
+&lt;p&gt;none, rgb, bgr, vrgb, vbgr.&lt;/p&gt;
+&lt;p&gt;Note that GSK does not support subpixel antialiasing, and this setting has no effect on font rendering in GTK.&lt;/p&gt;
+&lt;p&gt;Default value: NULL&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>RGBA order:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" colspan="2">
+          <widget class="QComboBox" name="cbxFontAntialiasing">
+           <item>
+            <property name="text">
+             <string>none</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>grayscale</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>rgba</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Antialiasing:</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -447,6 +497,9 @@
             </item>
             <item row="1" column="0" colspan="2">
              <widget class="QCheckBox" name="chkWarpSlider">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="toolTip">
                <string>&lt;h3&gt;gtk-primary-button-warps-slider&lt;/h3&gt;
 &lt;p&gt;If the value of this setting is &lt;b&gt;true&lt;/b&gt;, clicking the primary button in a &lt;b&gt;GtkRange&lt;/b&gt; trough will move the slider, and hence set the range’s value, to the point that you clicked.&lt;/p&gt;

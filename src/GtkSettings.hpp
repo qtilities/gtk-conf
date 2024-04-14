@@ -2,7 +2,7 @@
 
 #include <QtCore/QObject>
 
-namespace GtkSettings
+namespace QGtkSettings
 {
     Q_NAMESPACE
 /**

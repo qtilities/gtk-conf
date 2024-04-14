@@ -18,9 +18,11 @@ public:
 private:
     void updateUi();
 
+    // TODO: Probably to remove if using gsettings
+#if 0
     Qt::CheckState checkState(int);
     int            fromCheckState(Qt::CheckState);
-
+#endif
     QFont fromName(const QString&);
 
     QStringList findThemes(

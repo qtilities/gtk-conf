@@ -1,13 +1,14 @@
 #pragma once
 
-#include "GtkSettings.hpp"
-#include <gio/gio.h>
 #include <QString>
+
+typedef struct _GSettings GSettings;
 
 class Settings
 {
 public:
     Settings();
+    ~Settings();
 
     void load();
     void save();
@@ -45,8 +46,14 @@ public:
     int xftDpi() const { return xftDpi_; }
     void setXftDpi(int xftDpi) { xftDpi_ = xftDpi; }
 
+    QString colorScheme() const { return colorScheme_; }
+    void setColorScheme(const QString& colorScheme) { colorScheme_ = colorScheme; }
+
     QString cursorThemeName() const { return cursorThemeName_; }
     void setCursorThemeName(const QString& cursorThemeName) { cursorThemeName_ = cursorThemeName; }
+
+    QString fontAntialiasing() const { return fontAntialiasing_; }
+    void setFontAntialiasing(const QString& fontAntialiasing) { fontAntialiasing_ = fontAntialiasing; }
 
     QString fontName() const { return fontName_; }
     void setFontName(const QString& fontName) { fontName_ = fontName; }
@@ -64,7 +71,9 @@ public:
     void setXftRgba(const QString& xftRgba) { xftRgba_ = xftRgba; }
 
 private:
-    GSettings* gsettings;
+    GSettings *guiSettings,
+              *prvSettings,
+              *sndSettings;
 
     bool enableEventSounds_;
     bool enableInputFeedbackSounds_;
@@ -77,8 +86,10 @@ private:
     int xftAntialias_;
     int xftHinting_;
     int xftDpi_;
+    QString colorScheme_;
     QString cursorThemeName_;
     QString fontName_;
+    QString fontAntialiasing_;
     QString iconThemeName_;
     QString themeName_;
     QString xftHintStyle_;

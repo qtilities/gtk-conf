@@ -23,8 +23,7 @@ find_package(Qtilitools REQUIRED)
 
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
-pkg_search_module(GLIB REQUIRED glib-2.0)
-pkg_search_module(GIO REQUIRED gio-2.0)
+pkg_search_module(GTK3 REQUIRED gtk+-3.0)
 
 set(PROJECT_SOURCES
     src/FontButton.hpp
@@ -64,13 +63,11 @@ set(PROJECT_ALL_FILES
 qt_add_executable(${PROJECT_NAME} MANUAL_FINALIZATION ${PROJECT_ALL_FILES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE
-    ${GIO_INCLUDE_DIRS}
-    ${GLIB_INCLUDE_DIRS}
+    ${GTK3_INCLUDE_DIRS}
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE
     Threads::Threads
-    ${GIO_LIBRARIES}
-    ${GLIB_LIBRARIES}
+    ${GTK3_LIBRARIES}
     Qt::Widgets
 )
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${PROJECT_ID}")
@@ -98,14 +95,14 @@ message(STATUS "
 Project name:                     ${PROJECT_NAME}
 Version:                          ${PROJECT_VERSION}
 Qt version:                       ${QT_VERSION}
-GLib version:                     ${GLIB_VERSION}
+GTK version:                      ${GTK3_VERSION}
 Build type:                       ${CMAKE_BUILD_TYPE}
 Install prefix:                   ${CMAKE_INSTALL_PREFIX}
 Update translations before build: ${PROJECT_TRANSLATIONS_UPDATE}
 ")
 qt_finalize_executable(${PROJECT_NAME})
 
-if (false)
+if (0)
 include(DebugUtils)
 print_all_variables()
 endif()
