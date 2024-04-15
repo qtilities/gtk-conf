@@ -40,7 +40,7 @@
         <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
        </property>
        <property name="currentRow">
-        <number>0</number>
+        <number>-1</number>
        </property>
        <item>
         <property name="text">
@@ -56,6 +56,14 @@
         </property>
         <property name="icon">
          <iconset theme="preferences-desktop-font"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sound</string>
+        </property>
+        <property name="icon">
+         <iconset theme="audio-volume-high"/>
         </property>
        </item>
        <item>
@@ -93,121 +101,7 @@
          <property name="bottomMargin">
           <number>6</number>
          </property>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_3">
-           <property name="toolTip">
-            <string>&lt;h3&gt;gtk-cursor-theme-name&lt;/h3&gt;
-&lt;p&gt;Name of the cursor theme to use.&lt;/p&gt;
-&lt;p&gt;Use NULL to use the default theme.&lt;/p&gt;
-&lt;p&gt;Default value: NULL&lt;/p&gt;</string>
-           </property>
-           <property name="text">
-            <string>Cursor:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QComboBox" name="cbxCursorThemeName"/>
-         </item>
-         <item row="4" column="0" colspan="2">
-          <widget class="QWidget" name="wgtPreview" native="true"/>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="toolTip">
-            <string>&lt;h3&gt;gtk-icon-theme-name&lt;/h3&gt;
-&lt;p&gt;Name of the icon theme to use.&lt;/p&gt;
-&lt;p&gt;See GtkIconTheme for details about how GTK handles icon themes.&lt;/p&gt;
-&lt;p&gt;Default value: Adwaita&lt;/p&gt;</string>
-           </property>
-           <property name="text">
-            <string>Icons:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="QGroupBox" name="gbxSystem">
-           <property name="title">
-            <string>System</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout">
-            <property name="leftMargin">
-             <number>6</number>
-            </property>
-            <property name="topMargin">
-             <number>6</number>
-            </property>
-            <property name="rightMargin">
-             <number>6</number>
-            </property>
-            <property name="bottomMargin">
-             <number>6</number>
-            </property>
-            <item row="1" column="1">
-             <widget class="QComboBox" name="cbxColorScheme">
-              <item>
-               <property name="text">
-                <string>default</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>prefer-dark</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>prefer-light</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QCheckBox" name="chkPreferDarkTheme">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="toolTip">
-               <string>&lt;h3&gt;gtk-application-prefer-dark-theme&lt;/h3&gt;
-&lt;p&gt;Whether the application prefers to use a dark theme.&lt;/p&gt;
-&lt;p&gt;If a GTK theme includes a dark variant, it will be used instead of the configured theme.&lt;/p&gt;
-&lt;p&gt;Default value: &lt;b&gt;false&lt;/b&gt;&lt;/p&gt;</string>
-              </property>
-              <property name="text">
-               <string>Prefer dark theme</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="0" colspan="2">
-             <widget class="QComboBox" name="cbxThemeName">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="toolTip">
-               <string>&lt;h3&gt;gtk-theme-name&lt;/h3&gt;
-&lt;p&gt;Name of the theme to load.&lt;/p&gt;
-&lt;p&gt;See GtkCssProvider for details about how GTK finds the CSS stylesheet for a theme.&lt;/p&gt;
-&lt;p&gt;Default value: Default&lt;/p&gt;</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QComboBox" name="cbxIconThemeName"/>
-         </item>
-         <item row="3" column="1">
-          <widget class="QSpinBox" name="sbxCursorThemeSize">
-           <property name="maximum">
-            <number>512</number>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
+         <item row="4" column="0">
           <widget class="QLabel" name="label_7">
            <property name="toolTip">
             <string>&lt;h3&gt;gtk-cursor-theme-size&lt;/h3&gt;
@@ -217,6 +111,103 @@
            </property>
            <property name="text">
             <string>Cursor size:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="cbxCursorThemeName"/>
+         </item>
+         <item row="5" column="0" colspan="2">
+          <widget class="QWidget" name="wgtPreview" native="true"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QComboBox" name="cbxColorScheme">
+           <item>
+            <property name="text">
+             <string>default</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>prefer-dark</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>prefer-light</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-cursor-theme-name&lt;/h3&gt;
+&lt;p&gt;Name of the cursor theme to use.&lt;/p&gt;
+&lt;p&gt;Use NULL to use the default theme.&lt;/p&gt;
+&lt;p&gt;Default value: NULL&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Cursor theme:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QComboBox" name="cbxIconThemeName"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="sbxCursorThemeSize">
+           <property name="maximum">
+            <number>512</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="cbxThemeName">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-icon-theme-name&lt;/h3&gt;
+&lt;p&gt;Name of the icon theme to use.&lt;/p&gt;
+&lt;p&gt;See GtkIconTheme for details about how GTK handles icon themes.&lt;/p&gt;
+&lt;p&gt;Default value: Adwaita&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Icon theme:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-application-prefer-dark-theme&lt;/h3&gt;
+&lt;p&gt;Whether the application prefers to use a dark theme.
+If a GTK+ theme includes a dark variant, it will be used instead of the configured theme.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;false&lt;/b&gt;&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Color scheme:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_10">
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-theme-name&lt;/h3&gt;
+&lt;p&gt;Name of the theme to load.&lt;/p&gt;
+&lt;p&gt;See GtkCssProvider for details about how GTK finds the CSS stylesheet for a theme.&lt;/p&gt;
+&lt;p&gt;Default value: Default&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>GTK theme:</string>
            </property>
           </widget>
          </item>
@@ -450,6 +441,89 @@
          </item>
         </layout>
        </widget>
+       <widget class="QWidget" name="page">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="2" column="0" colspan="2">
+          <widget class="QCheckBox" name="chkEnableInputFeedbackSounds">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-enable-input-feedback-sounds&lt;/h3&gt;
+&lt;p&gt;Whether to play event sounds as feedback to user input.&lt;/p&gt;
+&lt;p&gt;See the Sound Theme Specifications for more information on event sounds and sound themes.&lt;/p&gt;
+&lt;p&gt;GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;true&lt;/b&gt;&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Play event sounds as feedback to user input</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="2">
+          <widget class="QCheckBox" name="chkAllowVolumeAbove100">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Allow volume above 100%</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2">
+          <widget class="QCheckBox" name="chkEnableEventSounds">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>&lt;h3&gt;gtk-enable-event-sounds&lt;/h3&gt;
+&lt;p&gt;Whether to play any event sounds at all.&lt;/p&gt;
+&lt;p&gt;See the Sound Theme Specifications for more information on event sounds and sound themes.&lt;/p&gt;
+&lt;p&gt;GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.&lt;/p&gt;
+&lt;p&gt;Default value: &lt;b&gt;true&lt;/b&gt;&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Play event sounds</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Sound theme:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="2">
+          <spacer name="vspSound">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="cbxSoundThemeName"/>
+         </item>
+        </layout>
+       </widget>
        <widget class="QWidget" name="page3">
         <layout class="QVBoxLayout" name="verticalLayout">
          <property name="leftMargin">
@@ -509,55 +583,6 @@
               </property>
               <property name="text">
                <string>Primary button warps slider</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="gbxSound">
-           <property name="title">
-            <string>Sound effect</string>
-           </property>
-           <layout class="QVBoxLayout" name="layGbxSound">
-            <property name="leftMargin">
-             <number>6</number>
-            </property>
-            <property name="topMargin">
-             <number>6</number>
-            </property>
-            <property name="rightMargin">
-             <number>6</number>
-            </property>
-            <property name="bottomMargin">
-             <number>6</number>
-            </property>
-            <item>
-             <widget class="QCheckBox" name="chkEnableEventSounds">
-              <property name="toolTip">
-               <string>&lt;h3&gt;gtk-enable-event-sounds&lt;/h3&gt;
-&lt;p&gt;Whether to play any event sounds at all.&lt;/p&gt;
-&lt;p&gt;See the Sound Theme Specifications for more information on event sounds and sound themes.&lt;/p&gt;
-&lt;p&gt;GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.&lt;/p&gt;
-&lt;p&gt;Default value: &lt;b&gt;true&lt;/b&gt;&lt;/p&gt;</string>
-              </property>
-              <property name="text">
-               <string>Play event sounds</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="chkEnableInputFeedbackSounds">
-              <property name="toolTip">
-               <string>&lt;h3&gt;gtk-enable-input-feedback-sounds&lt;/h3&gt;
-&lt;p&gt;Whether to play event sounds as feedback to user input.&lt;/p&gt;
-&lt;p&gt;See the Sound Theme Specifications for more information on event sounds and sound themes.&lt;/p&gt;
-&lt;p&gt;GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.&lt;/p&gt;
-&lt;p&gt;Default value: &lt;b&gt;true&lt;/b&gt;&lt;/p&gt;</string>
-              </property>
-              <property name="text">
-               <string>Play event sounds as feedback to user input</string>
               </property>
              </widget>
             </item>

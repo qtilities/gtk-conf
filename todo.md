@@ -1,6 +1,7 @@
 # todo
 
-Watch settings changing from other editor and ask user if to reload or save current changes.
+- Try to replace GSettings with GtkSettings, otherwise adapt tooltips with the different API.
+- See why some settings have no effect compared to settings.ini.
 
 ## properties
 

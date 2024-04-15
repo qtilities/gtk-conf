@@ -1,0 +1,97 @@
+name: CI
+on:
+  push:
+    branches:
+      - '*'
+  # Manual builds and PRs in all branches
+  pull_request:
+    branches:
+      - '*'
+  workflow_dispatch:
+    branches:
+      - '*'
+jobs:
+  build:
+    name: Build
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        name: [
+          Arch,
+          Debian
+        ]
+        include:
+          - name: Arch
+            os: ubuntu-latest
+            container: archlinux:base-devel
+
+          - name: Debian
+            os: ubuntu-latest
+            container: debian:testing
+
+    runs-on: ${{ matrix.os }}
+    container: ${{ matrix.container }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout Qtilitools
+        uses: actions/checkout@v3
+        with:
+          repository: qtilities/qtilitools
+          path: qtilitools
+
+      - name: Install Arch Linux dependencies
+        if: matrix.name == 'Arch'
+        run: |
+          pacman-key --init
+          pacman -Syu --noconfirm
+          packages=(
+            clang
+            cmake
+            git
+            gtk3
+            qt6-base
+            qt6-tools
+          )
+          pacman -S --noconfirm ${packages[@]}
+
+      - name: Install Debian Testing dependencies
+        if: matrix.name == 'Debian'
+        run: |
+          apt-get update
+          apt-get upgrade -y
+          apt-get install -y cmake clang g++ gcc git \
+            libglib2.0 libgl1-mesa-dev libgtk-3-dev pkg-config \
+            qt6-base-dev  qt6-l10n-tools \
+            qt6-tools-dev qt6-tools-dev-tools
+
+      # These builds are executed on all runners
+      - name: Build and install Qtilitools
+        working-directory: ${{ github.workspace }}/qtilitools
+        run: |
+          cmake \
+            -B build \
+            -D CMAKE_INSTALL_PREFIX="/usr" \
+            -D CMAKE_BUILD_TYPE=Release
+          cmake --install build
+
+      - name: Build with gcc
+        run: |
+          export CC=gcc
+          export CXX=g++
+          cmake \
+            -B build-gcc \
+            -D CMAKE_BUILD_TYPE=Release
+          cmake --build build-gcc --verbose
+
+      - name: Build with clang
+        run: |
+          export CC=clang
+          export CXX=clang++
+          cmake \
+            -B build-clang \
+            -D CMAKE_BUILD_TYPE=Release
+          cmake --build build-clang --verbose

@@ -23,15 +23,29 @@ DialogMain::DialogMain(QWidget *parent)
 
     ui->setupUi(this);
     ui->list->setFixedWidth(ui->list->sizeHintForColumn(0) + 2 * ui->list->frameWidth());
-    ui->cbxCursorThemeName->addItems(findThemes(QStringLiteral("icons"), QStringLiteral("cursors")));
-    ui->cbxIconThemeName->addItems(findThemes(QStringLiteral("icons"), QStringLiteral("16x16"), QStringLiteral("scalable"), QStringLiteral("Adwaita")));
-    ui->cbxThemeName->addItems(findThemes(QStringLiteral("themes"), QStringLiteral("/gtk-3.0/gtk.css"), QStringLiteral("Default")));
+
+    QStringList cursorThemes = findThemes(QStringLiteral("icons"), QStringLiteral("cursors"));
+    QStringList iconThemes   = findThemes(QStringLiteral("icons"), QStringLiteral("16x16"), QStringLiteral("scalable"),
+                                          QStringLiteral("Adwaita"));
+    QStringList soundThemes  = findThemes(QStringLiteral("sounds"), QString(), QString(),
+                                          QStringLiteral("freedesktop"));
+    QStringList gtkThemes    = findThemes(QStringLiteral("themes"), QStringLiteral("/gtk-3.0"), QString(),
+                                          QStringLiteral("Default"));
+
+    cursorThemes.sort(Qt::CaseInsensitive);
+    iconThemes.sort(Qt::CaseInsensitive);
+    soundThemes.sort(Qt::CaseInsensitive);
+    gtkThemes.sort(Qt::CaseInsensitive);
+
+    ui->cbxCursorThemeName->addItems(cursorThemes);
+    ui->cbxIconThemeName->addItems(iconThemes);
+    ui->cbxSoundThemeName->addItems(soundThemes);
+    ui->cbxThemeName->addItems(gtkThemes);
 
     QPushButton* reset = ui->buttonBox->button(QDialogButtonBox::Reset);
     QPushButton* save  = ui->buttonBox->button(QDialogButtonBox::Save);
     DISABLE_BUTTONS;
 
-    settings->load();
     connect(settings, &Settings::propertiesChanged, [this, reset, save](){
         QMessageBox::warning(this, tr("Settings changed"),
             tr("Settings was changed by a different application.\n\n"
@@ -90,6 +104,7 @@ DialogMain::DialogMain(QWidget *parent)
     CONNECT_CHECKBOX(EnableInputFeedbackSounds);
     CONNECT_CHECKBOX(OverlayScrolling);
 #if 0
+    CONNECT_CHECKBOX(AllowVolumeAbove100);
     CONNECT_CHECKBOX(PreferDarkTheme);
     CONNECT_CHECKBOX(WarpSlider);
     CONNECT_CHECKBOX_TRISTATE(XftAntialias);
@@ -99,6 +114,7 @@ DialogMain::DialogMain(QWidget *parent)
     CONNECT_COMBOBOX(CursorThemeName);
     CONNECT_COMBOBOX(FontAntialiasing);
     CONNECT_COMBOBOX(IconThemeName);
+    CONNECT_COMBOBOX(SoundThemeName);
     CONNECT_COMBOBOX(ThemeName);
     CONNECT_COMBOBOX(XftHintStyle);
     CONNECT_COMBOBOX(XftRgba);
@@ -120,8 +136,8 @@ DialogMain::~DialogMain()
 
 void DialogMain::updateUi()
 {
+//  ui->chkAllowVolumeAbove100->setChecked(settings->allowVolumeAbove100());
     ui->cbxColorScheme->setCurrentText(settings->colorScheme());
-//  ui->chkPreferDarkTheme->setChecked(settings->preferDarkTheme());
     ui->cbxCursorThemeName->setCurrentText(settings->cursorThemeName());
     ui->sbxCursorThemeSize->setValue(settings->cursorThemeSize());
     ui->chkEnableEventSounds->setChecked(settings->enableEventSounds());
@@ -133,10 +149,8 @@ void DialogMain::updateUi()
 //  ui->chkWarpSlider->setChecked(settings->warpSlider());
     ui->gbxEnableRecentFiles->setChecked(settings->enableRecentFiles());
     ui->sbxRecentFilesMaxAge->setValue(settings->recentFilesMaxAge());
+    ui->cbxSoundThemeName->setCurrentText(settings->soundThemeName());
     ui->cbxThemeName->setCurrentText(settings->themeName());
-//  ui->chkXftAntialias->setCheckState(checkState(settings->xftAntialias()));
-//  ui->chkXftDpi_->setCheckState(checkState(settings->xftDpi()));
-//  ui->chkXftHinting->setCheckState(checkState(settings->xftHinting()));
     ui->cbxXftHintStyle->setCurrentText(settings->xftHintStyle());
     ui->cbxXftRgba->setCurrentText(settings->xftRgba());
 }
@@ -176,35 +190,32 @@ QFont DialogMain::fromName(const QString& fontName)
     return font;
 }
 
-QStringList DialogMain::findThemes(const QString& themeDirName, const QString& searchWhat,
-                                   const QString& searchWhat2,  const QString& defaultValue) const
+QStringList DialogMain::findThemes(const QString& themeDirName,  const QString& searchFilter,
+                                   const QString& searchFilter2, const QString& defaultValue) const
 {
-    QStringList themes, themesPaths;
-    QStringList paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
-    paths.removeDuplicates();
+    QStringList paths, themes, themesPaths;
+    paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
+    paths.removeDuplicates(); // QStandardPaths seems to add duplicates
 
-    // $HOME/.local/share/themes:/usr/local/share/themes:/usr/share/themes
+    // $HOME/.themes - priority to local themes
+    themesPaths.push_back(QString("%1%2%3").arg(std::getenv("HOME"), QStringLiteral("/."), themeDirName));
+
+    // .local/share/themes:/usr/local/share/themes:/usr/share/themes
     for(const QString& path : std::as_const(paths)) {
         QString themesPath = path + '/' + themeDirName;
-        if (QDir(themesPath).exists())
-            themesPaths.push_back(themesPath);
+        themesPaths.push_back(themesPath);
     }
-    // $HOME/.themes if any
-    QString homeThemes = QString("%1%2%3").arg(std::getenv("HOME"), QStringLiteral("/."), themeDirName);
-    if (!themesPaths.contains(homeThemes) && QDir(homeThemes).exists())
-        themesPaths.push_back(homeThemes);
-
     for(const QString& themesPath : std::as_const(themesPaths)) {
         QDir themesDir(themesPath);
         QStringList themeEntries = themesDir.entryList(QDir::Dirs|QDir::NoDotAndDotDot);
         for (const QString& themeEntry : std::as_const(themeEntries)) {
             if (themeEntry == QStringLiteral("locolor") || themeEntry == QStringLiteral("hicolor"))
                 continue;
-            QString themePath = themesPath + '/' + themeEntry + '/' + searchWhat;
+            QString themePath = themesPath + '/' + themeEntry + '/' + searchFilter;
             if (QFileInfo::exists(themePath)) //TODO: && QFileInfo(themePath).isFile()) ?
                 themes.push_back(themeEntry);
-            if (!searchWhat2.isNull()) {
-                QString themePath = themesPath + '/' + themeEntry + '/' + searchWhat2;
+            if (!searchFilter2.isNull()) {
+                QString themePath = themesPath + '/' + themeEntry + '/' + searchFilter2;
                 if (QFileInfo::exists(themePath)) //TODO: && QFileInfo(themePath).isFile()) ?
                     themes.push_back(themeEntry);
             }

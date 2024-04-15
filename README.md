@@ -47,7 +47,7 @@ For contributing translations the [LXQt Weblate] platform can be used.
 
 
 [alternative]:          https://wiki.archlinux.org/title/CMake_package_guidelines#Fixing_the_automatic_optimization_flag_override
-[CI]:                   https://github.com/qtilities/omgmounter/actions/workflows/build.yml/badge.svg
+[CI]:                   https://github.com/qtilities/gtk-conf/actions/workflows/build.yml/badge.svg
 [GPL-2.0-only]:         COPYING
 [LXQt Weblate]:         https://translate.lxqt-project.org/projects/qtilities/gtk-conf/
 [Packaging status]:     https://repology.org/badge/vertical-allrepos/gtk-conf.svg

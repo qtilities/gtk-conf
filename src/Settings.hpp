@@ -16,6 +16,11 @@ public:
     void load();
     void save();
 
+    bool saving() const { return saving_; }
+#if 0
+    bool allowVolumeAbove100() const { return allowVolumeAbove100_; }
+    void setAllowVolumeAbove100(bool allowVolumeAbove100) { allowVolumeAbove100_ = allowVolumeAbove100; }
+#endif
     bool enableEventSounds() const { return enableEventSounds_; }
     void setEnableEventSounds(bool enableEventSounds) { enableEventSounds_ = enableEventSounds; }
 
@@ -64,6 +69,9 @@ public:
     QString iconThemeName() const { return iconThemeName_; }
     void setIconThemeName(const QString& iconThemeName) { iconThemeName_ = iconThemeName; }
 
+    QString soundThemeName() const { return soundThemeName_; }
+    void setSoundThemeName(const QString& soundThemeName) { soundThemeName_ = soundThemeName; }
+
     QString themeName() const { return themeName_; }
     void setThemeName(const QString& themeName) { themeName_ = themeName; }
 
@@ -77,10 +85,12 @@ Q_SIGNALS:
     void propertiesChanged();
 
 private:
-    GSettings *guiSettings,
-              *prvSettings,
-              *sndSettings;
+    GSettings *guiSettings_,
+              *prvSettings_,
+              *sndSettings_;
 
+    bool saving_;
+    bool allowVolumeAbove100_;
     bool enableEventSounds_;
     bool enableInputFeedbackSounds_;
     bool enableRecentFiles_;
@@ -97,6 +107,7 @@ private:
     QString fontName_;
     QString fontAntialiasing_;
     QString iconThemeName_;
+    QString soundThemeName_;
     QString themeName_;
     QString xftHintStyle_;
     QString xftRgba_;

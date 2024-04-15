@@ -26,8 +26,8 @@ private:
     QFont fromName(const QString&);
 
     QStringList findThemes(
-        const QString& themeDirName, const QString& searchWhat,
-        const QString& searchWhat2  = QString(), const QString& defaultValue = QString()
+        const QString& themeDirName, const QString& searchFilter,
+        const QString& searchFilter2 = QString(), const QString& defaultValue = QString()
     ) const;
 
     Ui::DialogMain* ui;
