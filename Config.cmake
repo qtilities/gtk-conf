@@ -7,7 +7,7 @@
 list(APPEND PROJECT_CATEGORIES "Qt;Utility") # Freedesktop menu categories
 list(APPEND PROJECT_KEYWORDS   "gtk;settings")
 set(PROJECT_ID                 "gtk-conf")
-set(PROJECT_DESCRIPTION        "GUI tool to set GSettings properties")
+set(PROJECT_DESCRIPTION        "Configuration tool for GTK system properties")
 set(PROJECT_DISPLAY_NAME       "GTK Settings")
 set(PROJECT_AUTHOR_NAME        "Andrea Zanellato")
 set(PROJECT_AUTHOR_EMAIL       "redtid3@gmail.com") # Used also for organization email

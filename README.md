@@ -4,7 +4,7 @@
 
 ## Overview
 
-GUI tool to set GSettings properties.
+Configuration tool for GTK system properties.
 
 ## Dependencies
 
