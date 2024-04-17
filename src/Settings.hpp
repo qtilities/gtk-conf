@@ -5,6 +5,8 @@
 
 typedef struct _GSettings GSettings;
 
+class QFileSystemWatcher;
+
 class Settings : public QObject
 {
     Q_OBJECT
@@ -16,10 +18,11 @@ public:
     void load();
     void save();
 
-    bool saving() const { return saving_; }
+    bool isWayland() const { return isWayland_; }
+    int saving() const { return saving_; }
 #if 0
-    bool allowVolumeAbove100() const { return allowVolumeAbove100_; }
-    void setAllowVolumeAbove100(bool allowVolumeAbove100) { allowVolumeAbove100_ = allowVolumeAbove100; }
+    int allowVolumeAbove100() const { return allowVolumeAbove100_; }
+    void setAllowVolumeAbove100(int allowVolumeAbove100) { allowVolumeAbove100_ = allowVolumeAbove100; }
 #endif
     bool enableEventSounds() const { return enableEventSounds_; }
     void setEnableEventSounds(bool enableEventSounds) { enableEventSounds_ = enableEventSounds; }
@@ -54,6 +57,12 @@ public:
     int xftDpi() const { return xftDpi_; }
     void setXftDpi(int xftDpi) { xftDpi_ = xftDpi; }
 
+    int scaleFactor() const { return scaleFactor_; }
+    void setScaleFactor(int scaleFactor) { scaleFactor_ = scaleFactor; }
+
+    qreal textScaleFactor() const { return textScaleFactor_; }
+    void setTextScaleFactor(qreal textScaleFactor) { textScaleFactor_ = textScaleFactor; }
+
     QString colorScheme() const { return colorScheme_; }
     void setColorScheme(const QString& colorScheme) { colorScheme_ = colorScheme; }
 
@@ -85,12 +94,21 @@ Q_SIGNALS:
     void propertiesChanged();
 
 private:
+    void loadGSettings();
+    void saveGSettings();
+
+    void loadIniSettings();
+    void saveIniSettings();
+
     GSettings *guiSettings_,
               *prvSettings_,
               *sndSettings_;
-
+    bool isWayland_;
     bool saving_;
-    bool allowVolumeAbove100_;
+
+    QFileSystemWatcher* fsWatcher_;
+
+//  int allowVolumeAbove100_;
     bool enableEventSounds_;
     bool enableInputFeedbackSounds_;
     bool enableRecentFiles_;
@@ -102,6 +120,8 @@ private:
     int xftAntialias_;
     int xftHinting_;
     int xftDpi_;
+    int scaleFactor_;
+    qreal textScaleFactor_;
     QString colorScheme_;
     QString cursorThemeName_;
     QString fontName_;

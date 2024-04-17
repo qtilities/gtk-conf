@@ -32,7 +32,7 @@ static void initLocale(QTranslator* qtTranslator, QTranslator* translator)
     bool isLoaded = translator->load(translationsFileName, translationsPath);
     if (!isLoaded)
     {
-        // "/usr/share/<appname>/translations
+        // "/usr/share/<appname>/translations"
         isLoaded = translator->load(translationsFileName,
             QStringLiteral(PROJECT_DATA_DIR) + QStringLiteral("/translations"));
     }

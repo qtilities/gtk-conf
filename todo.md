@@ -1,7 +1,10 @@
 # todo
 
-- Try to replace GSettings with GtkSettings, otherwise adapt tooltips with the different API.
-- See why some settings have no effect compared to settings.ini.
+- Adapt tooltips for the different `GSettings` and `GtkSettings` properties.
+- Replace {Q|Gtk}Settings with XSettings.
+- Understand what impact, if any, `GSettings` have when using `settings.ini` on X11.
+- FontButton (or the way setting it) can cause crashes?
+- GSettings has `scaling-factor` and `text-scaling-factor`: are these useful to replace `GTK_SCALE` and `GTK_DPI_SCALE`?
 
 ## properties
 

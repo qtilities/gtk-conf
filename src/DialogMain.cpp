@@ -24,6 +24,31 @@ DialogMain::DialogMain(QWidget *parent)
     ui->setupUi(this);
     ui->list->setFixedWidth(ui->list->sizeHintForColumn(0) + 2 * ui->list->frameWidth());
 
+    ui->gbxScaleFactor->hide();
+    ui->chkAllowVolumeAbove100->hide();
+
+    QStringList listXftHintStyle, listXftRgba;
+
+    if (settings->isWayland()) {
+        listXftHintStyle = { QStringLiteral("slight"), QStringLiteral("none"), QStringLiteral("medium"), QStringLiteral("full") };
+        listXftRgba = { QStringLiteral("rgb"), QStringLiteral("rgba"), QStringLiteral("bgr"), QStringLiteral("vrgb"), QStringLiteral("vbgr") };
+        ui->chkPreferDarkTheme->hide();
+        ui->chkWarpSlider->hide();
+        ui->chkXftAntialias->hide();
+        ui->chkXftHinting->hide();
+        ui->sbxXftDpi->hide();
+        ui->lblXftDpi->hide();
+    } else {
+        listXftHintStyle = { QString(), QStringLiteral("hintnone"), QStringLiteral("hintslight"), QStringLiteral("hintmedium"), QStringLiteral("hintfull") };
+        listXftRgba = { QString(), QStringLiteral("none"), QStringLiteral("rgb"), QStringLiteral("bgr"), QStringLiteral("vrgb"), QStringLiteral("vbgr") };
+        ui->lblColorScheme->hide();
+        ui->cbxColorScheme->hide();
+        ui->cbxFontAntialiasing->hide();
+        ui->lblFontAntialiasing->hide();
+    }
+    ui->cbxXftHintStyle->addItems(listXftHintStyle);
+    ui->cbxXftRgba->addItems(listXftRgba);
+
     QStringList cursorThemes = findThemes(QStringLiteral("icons"), QStringLiteral("cursors"));
     QStringList iconThemes   = findThemes(QStringLiteral("icons"), QStringLiteral("16x16"), QStringLiteral("scalable"),
                                           QStringLiteral("Adwaita"));
@@ -48,8 +73,8 @@ DialogMain::DialogMain(QWidget *parent)
 
     connect(settings, &Settings::propertiesChanged, [this, reset, save](){
         QMessageBox::warning(this, tr("Settings changed"),
-            tr("Settings was changed by a different application.\n\n"
-               "You can reload the new settings by pressing the Reset button"
+            tr("Some settings have been changed by a different application.\n\n"
+               "You can reload the new settings by pressing the Reset button, "
                "or use Save if you want to keep the current ones.")
             );
         ENABLE_BUTTONS;
@@ -61,13 +86,11 @@ DialogMain::DialogMain(QWidget *parent)
         settings->set##NAME(ui->chk##NAME->isChecked()); \
         ENABLE_BUTTONS; \
     })
-#if 0
 #define CONNECT_CHECKBOX_TRISTATE(NAME) \
     connect(ui->chk##NAME, &QCheckBox::clicked, [this, reset, save]() { \
         settings->set##NAME(fromCheckState(ui->chk##NAME->checkState())); \
         ENABLE_BUTTONS; \
     })
-#endif
 #define CONNECT_COMBOBOX(NAME) \
     connect(ui->cbx##NAME, &QComboBox::currentTextChanged, [this, reset, save]() { \
         settings->set##NAME(ui->cbx##NAME->currentText()); \
@@ -77,6 +100,12 @@ DialogMain::DialogMain(QWidget *parent)
     connect(ui->sbx##NAME, QOverload<int>::of(&QSpinBox::valueChanged), \
             [this, reset, save] { \
                 settings->set##NAME(ui->sbx##NAME->value()); \
+                ENABLE_BUTTONS; \
+            })
+#define CONNECT_DOUBLE_SPINBOX(NAME) \
+    connect(ui->dsb##NAME, QOverload<qreal>::of(&QDoubleSpinBox::valueChanged), \
+            [this, reset, save] { \
+                settings->set##NAME(ui->dsb##NAME->value()); \
                 ENABLE_BUTTONS; \
             })
     connect(ui->gbxEnableRecentFiles, &QGroupBox::toggled, [this, reset, save]() { \
@@ -105,14 +134,20 @@ DialogMain::DialogMain(QWidget *parent)
     CONNECT_CHECKBOX(OverlayScrolling);
 #if 0
     CONNECT_CHECKBOX(AllowVolumeAbove100);
-    CONNECT_CHECKBOX(PreferDarkTheme);
-    CONNECT_CHECKBOX(WarpSlider);
-    CONNECT_CHECKBOX_TRISTATE(XftAntialias);
-    CONNECT_CHECKBOX_TRISTATE(XftHinting);
+    CONNECT_SPINBOX(ScaleFactor);
+    CONNECT_DOUBLE_SPINBOX(TextScaleFactor);
 #endif
-    CONNECT_COMBOBOX(ColorScheme);
+    if (settings->isWayland()) {
+        CONNECT_COMBOBOX(ColorScheme);
+        CONNECT_COMBOBOX(FontAntialiasing);
+    } else {
+        CONNECT_CHECKBOX(PreferDarkTheme);
+        CONNECT_CHECKBOX(WarpSlider);
+        CONNECT_CHECKBOX_TRISTATE(XftAntialias);
+        CONNECT_CHECKBOX_TRISTATE(XftHinting);
+        CONNECT_SPINBOX(XftDpi);
+    }
     CONNECT_COMBOBOX(CursorThemeName);
-    CONNECT_COMBOBOX(FontAntialiasing);
     CONNECT_COMBOBOX(IconThemeName);
     CONNECT_COMBOBOX(SoundThemeName);
     CONNECT_COMBOBOX(ThemeName);
@@ -136,25 +171,36 @@ DialogMain::~DialogMain()
 
 void DialogMain::updateUi()
 {
-//  ui->chkAllowVolumeAbove100->setChecked(settings->allowVolumeAbove100());
-    ui->cbxColorScheme->setCurrentText(settings->colorScheme());
+    if (settings->isWayland()) {
+        ui->cbxColorScheme->setCurrentText(settings->colorScheme());
+        ui->cbxFontAntialiasing->setCurrentText(settings->fontAntialiasing());
+    } else {
+        ui->chkPreferDarkTheme->setChecked(settings->preferDarkTheme());
+        ui->chkWarpSlider->setChecked(settings->warpSlider());
+        ui->sbxXftDpi->setValue(settings->xftDpi());
+        ui->chkXftAntialias->setCheckState(checkState(settings->xftAntialias()));
+        ui->chkXftHinting->setCheckState(checkState(settings->xftHinting()));
+    }
     ui->cbxCursorThemeName->setCurrentText(settings->cursorThemeName());
     ui->sbxCursorThemeSize->setValue(settings->cursorThemeSize());
+    ui->fbnDefaultFont->setFont(fromName(settings->fontName()));
     ui->chkEnableEventSounds->setChecked(settings->enableEventSounds());
     ui->chkEnableInputFeedbackSounds->setChecked(settings->enableInputFeedbackSounds());
-    ui->cbxFontAntialiasing->setCurrentText(settings->fontAntialiasing());
-    ui->fbnDefaultFont->setFont(fromName(settings->fontName()));
+    ui->gbxEnableRecentFiles->setChecked(settings->enableRecentFiles());
     ui->cbxIconThemeName->setCurrentText(settings->iconThemeName());
     ui->chkOverlayScrolling->setChecked(settings->overlayScrolling());
-//  ui->chkWarpSlider->setChecked(settings->warpSlider());
-    ui->gbxEnableRecentFiles->setChecked(settings->enableRecentFiles());
     ui->sbxRecentFilesMaxAge->setValue(settings->recentFilesMaxAge());
     ui->cbxSoundThemeName->setCurrentText(settings->soundThemeName());
     ui->cbxThemeName->setCurrentText(settings->themeName());
     ui->cbxXftHintStyle->setCurrentText(settings->xftHintStyle());
     ui->cbxXftRgba->setCurrentText(settings->xftRgba());
-}
 #if 0
+//  ui->chkAllowVolumeAbove100->setChecked(settings->allowVolumeAbove100());
+    ui->sbxScaleFactor->setValue(settings->scaleFactor());
+    ui->dsbTextScaleFactor->setValue(settings->textScaleFactor());
+#endif
+}
+
 Qt::CheckState DialogMain::checkState(int state)
 {
     switch(state) {
@@ -174,7 +220,7 @@ int DialogMain::fromCheckState(Qt::CheckState state)
     default: return 0;
     }
 }
-#endif
+
 QFont DialogMain::fromName(const QString& fontName)
 {
     QFont font;

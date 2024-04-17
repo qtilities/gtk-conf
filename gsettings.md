@@ -1,0 +1,59 @@
+# GtkSettings and GSettings common properties
+
+Here below all possible equivalent properties.
+Note that GtkSettings is v4; in v3 there are some deprecated properties that currently works on GSettings,
+like `gtk-im-preedit-style` and `gtk-im-status-style`, so we have to decide what to keep and what to exclude.
+
+| Name                                | Type   | GSettings
+| ---                                 | ---    | ---
+| `gtk-alternative-button-order`      | bool   | N/A
+| `gtk-alternative-sort-arrows`       | bool   | N/A
+| `gtk-application-prefer-dark-theme` | bool   | `color-scheme`
+| `gtk-cursor-aspect-ratio`           | double | N/A
+| `gtk-cursor-blink`                  | bool   | `cursor-blink`
+| `gtk-cursor-blink-time`             | int    | `cursor-blink-time`
+| `gtk-cursor-blink-timeout`          | int    | `cursor-blink-timeout`
+| `gtk-cursor-theme-name`             | string | `cursor-theme`
+| `gtk-cursor-theme-size`             | int    | `cursor-size`
+| `gtk-decoration-layout`             | string | `wm/button-layout`
+| `gtk-dialogs-use-header`            | bool   | N/A
+| `gtk-dnd-drag-threshold`            | int    | `peripherals/mouse/drag-threshold`
+| `gtk-double-click-distance`         | int    | N/A
+| `gtk-double-click-time`             | int    | `peripherals/mouse/double-click`
+| `gtk-enable-accels`                 | bool   | N/A
+| `gtk-enable-animations`             | bool   | `enable-animations`
+| `gtk-enable-event-sounds`           | bool   | `sound/event-sounds` `privacy/disable-sound-output`?
+| `gtk-enable-input-feedback-sounds`  | bool   | `sound/input-feedback-sounds`
+| `gtk-enable-primary-paste`          | bool   | `gtk-enable-primary-paste`
+| `gtk-entry-password-hint-timeout`   | int    | N/A
+| `gtk-entry-select-on-focus`         | bool   | N/A
+| `gtk-error-bell`                    | bool   | `wm/audible-bell`?
+| `gtk-font-name`                     | string | `font-name`
+| `gtk-fontconfig-timestamp`          | uint   | N/A
+| `gtk-hint-font-metrics`             | bool   | N/A
+| `gtk-icon-theme-name`               | string | `icon-theme`
+| `gtk-im-module`                     | string | `gtk-im-module`
+| `gtk-keynav-use-caret`              | bool   | N/A
+| `gtk-label-select-on-focus`         | bool   | N/A
+| `gtk-long-press-time`               | uint   | N/A
+| `gtk-overlay-scrolling`             | bool   | `overlay-scrolling`
+| `gtk-primary-button-warps-slider`   | bool   | N/A
+| `gtk-print-backends`                | string | N/A
+| `gtk-print-preview-command`         | string | N/A
+| `gtk-recent-files-enabled`          | bool   | `privacy/remember-recent-files`
+| `gtk-recent-files-max-age`          | int    | `privacy/recent-files-max-age`
+| `gtk-shell-shows-app-menu`          | bool   | N/A
+| `gtk-shell-shows-desktop`           | bool   | N/A
+| `gtk-shell-shows-menubar`           | bool   | N/A
+| `gtk-show-status-shapes`            | bool   | N/A
+| `gtk-sound-theme-name`              | string | `sound/theme-name`
+| `gtk-split-cursor`                  | bool   | N/A
+| `gtk-theme-name`                    | string | `gtk-theme`
+| `gtk-titlebar-double-click`         | string | `wm/action-double-click-titlebar`
+| `gtk-titlebar-middle-click`         | string | `wm/action-middle-click-titlebar`
+| `gtk-titlebar-right-click`          | string | `wm/action-right-click-titlebar`
+| `gtk-xft-antialias`                 | int    | `font-antialiasing`
+| `gtk-xft-dpi`                       | int    | N/A
+| `gtk-xft-hinting`                   | int    | N/A
+| `gtk-xft-hintstyle`                 | string | `font-hinting`
+| `gtk-xft-rgba`                      | string | `font-rgba-order`
