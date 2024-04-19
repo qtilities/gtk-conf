@@ -36,6 +36,7 @@ set(PROJECT_SOURCES
     src/DialogMain.ui
     src/Settings.hpp
     src/Settings.cpp
+    src/ToolTips.cpp
     src/main.cpp
 )
 set(PROJECT_OTHER_FILES

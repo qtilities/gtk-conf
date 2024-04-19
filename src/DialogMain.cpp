@@ -1,6 +1,5 @@
 #include "DialogMain.hpp"
 #include "DialogAbout.hpp"
-#include "ui_DialogMain.h"
 #include "Settings.hpp"
 
 #include <QDir>
@@ -10,8 +9,7 @@
 
 DialogMain::DialogMain(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::DialogMain)
-    , settings(new Settings(this))
+    , settings_(new Settings(this))
 {
 #define ENABLE_BUTTONS \
     reset->setEnabled(true); \
@@ -21,33 +19,38 @@ DialogMain::DialogMain(QWidget *parent)
     reset->setEnabled(false); \
     save->setEnabled(false)
 
-    ui->setupUi(this);
-    ui->list->setFixedWidth(ui->list->sizeHintForColumn(0) + 2 * ui->list->frameWidth());
+    setupUi(this);
 
-    ui->gbxScaleFactor->hide();
-    ui->chkAllowVolumeAbove100->hide();
+    list->setFixedWidth(list->sizeHintForColumn(0) + 2 * list->frameWidth());
+
+    gbxScaleFactor->hide();
+    chkAllowVolumeAbove100->hide();
 
     QStringList listXftHintStyle, listXftRgba;
 
-    if (settings->isWayland()) {
+    if (settings_->isWayland()) {
+        setupToolTipsGSettings();
         listXftHintStyle = { QStringLiteral("slight"), QStringLiteral("none"), QStringLiteral("medium"), QStringLiteral("full") };
         listXftRgba = { QStringLiteral("rgb"), QStringLiteral("rgba"), QStringLiteral("bgr"), QStringLiteral("vrgb"), QStringLiteral("vbgr") };
-        ui->chkPreferDarkTheme->hide();
-        ui->chkWarpSlider->hide();
-        ui->chkXftAntialias->hide();
-        ui->chkXftHinting->hide();
-        ui->sbxXftDpi->hide();
-        ui->lblXftDpi->hide();
+        cbxColorScheme->addItems({"default", "prefer-light", "prefer-dark"});
+        cbxFontAntialiasing->addItems({"none", "grayscale", "rgba"});
+        chkPreferDarkTheme->hide();
+        chkWarpSlider->hide();
+        chkXftAntialias->hide();
+        chkXftHinting->hide();
+        sbxXftDpi->hide();
+        lblXftDpi->hide();
     } else {
+        setupToolTips();
         listXftHintStyle = { QString(), QStringLiteral("hintnone"), QStringLiteral("hintslight"), QStringLiteral("hintmedium"), QStringLiteral("hintfull") };
         listXftRgba = { QString(), QStringLiteral("none"), QStringLiteral("rgb"), QStringLiteral("bgr"), QStringLiteral("vrgb"), QStringLiteral("vbgr") };
-        ui->lblColorScheme->hide();
-        ui->cbxColorScheme->hide();
-        ui->cbxFontAntialiasing->hide();
-        ui->lblFontAntialiasing->hide();
+        lblColorScheme->hide();
+        cbxColorScheme->hide();
+        cbxFontAntialiasing->hide();
+        lblFontAntialiasing->hide();
     }
-    ui->cbxXftHintStyle->addItems(listXftHintStyle);
-    ui->cbxXftRgba->addItems(listXftRgba);
+    cbxXftHintStyle->addItems(listXftHintStyle);
+    cbxXftRgba->addItems(listXftRgba);
 
     QStringList cursorThemes = findThemes(QStringLiteral("icons"), QStringLiteral("cursors"));
     QStringList iconThemes   = findThemes(QStringLiteral("icons"), QStringLiteral("16x16"), QStringLiteral("scalable"),
@@ -62,16 +65,16 @@ DialogMain::DialogMain(QWidget *parent)
     soundThemes.sort(Qt::CaseInsensitive);
     gtkThemes.sort(Qt::CaseInsensitive);
 
-    ui->cbxCursorThemeName->addItems(cursorThemes);
-    ui->cbxIconThemeName->addItems(iconThemes);
-    ui->cbxSoundThemeName->addItems(soundThemes);
-    ui->cbxThemeName->addItems(gtkThemes);
+    cbxCursorThemeName->addItems(cursorThemes);
+    cbxIconThemeName->addItems(iconThemes);
+    cbxSoundThemeName->addItems(soundThemes);
+    cbxThemeName->addItems(gtkThemes);
 
-    QPushButton* reset = ui->buttonBox->button(QDialogButtonBox::Reset);
-    QPushButton* save  = ui->buttonBox->button(QDialogButtonBox::Save);
+    QPushButton* reset = buttonBox->button(QDialogButtonBox::Reset);
+    QPushButton* save  = buttonBox->button(QDialogButtonBox::Save);
     DISABLE_BUTTONS;
 
-    connect(settings, &Settings::propertiesChanged, [this, reset, save](){
+    connect(settings_, &Settings::propertiesChanged, [this, reset, save](){
         QMessageBox::warning(this, tr("Settings changed"),
             tr("Some settings have been changed by a different application.\n\n"
                "You can reload the new settings by pressing the Reset button, "
@@ -82,50 +85,50 @@ DialogMain::DialogMain(QWidget *parent)
     updateUi();
 
 #define CONNECT_CHECKBOX(NAME) \
-    connect(ui->chk##NAME, &QCheckBox::toggled, [this, reset, save]() { \
-        settings->set##NAME(ui->chk##NAME->isChecked()); \
+    connect(chk##NAME, &QCheckBox::toggled, [this, reset, save]() { \
+        settings_->set##NAME(chk##NAME->isChecked()); \
         ENABLE_BUTTONS; \
     })
 #define CONNECT_CHECKBOX_TRISTATE(NAME) \
-    connect(ui->chk##NAME, &QCheckBox::clicked, [this, reset, save]() { \
-        settings->set##NAME(fromCheckState(ui->chk##NAME->checkState())); \
+    connect(chk##NAME, &QCheckBox::clicked, [this, reset, save]() { \
+        settings_->set##NAME(fromCheckState(chk##NAME->checkState())); \
         ENABLE_BUTTONS; \
     })
 #define CONNECT_COMBOBOX(NAME) \
-    connect(ui->cbx##NAME, &QComboBox::currentTextChanged, [this, reset, save]() { \
-        settings->set##NAME(ui->cbx##NAME->currentText()); \
+    connect(cbx##NAME, &QComboBox::currentTextChanged, [this, reset, save]() { \
+        settings_->set##NAME(cbx##NAME->currentText()); \
         ENABLE_BUTTONS; \
     })
 #define CONNECT_SPINBOX(NAME) \
-    connect(ui->sbx##NAME, QOverload<int>::of(&QSpinBox::valueChanged), \
+    connect(sbx##NAME, QOverload<int>::of(&QSpinBox::valueChanged), \
             [this, reset, save] { \
-                settings->set##NAME(ui->sbx##NAME->value()); \
+                settings_->set##NAME(sbx##NAME->value()); \
                 ENABLE_BUTTONS; \
             })
 #define CONNECT_DOUBLE_SPINBOX(NAME) \
-    connect(ui->dsb##NAME, QOverload<qreal>::of(&QDoubleSpinBox::valueChanged), \
+    connect(dsb##NAME, QOverload<qreal>::of(&QDoubleSpinBox::valueChanged), \
             [this, reset, save] { \
-                settings->set##NAME(ui->dsb##NAME->value()); \
+                settings_->set##NAME(dsb##NAME->value()); \
                 ENABLE_BUTTONS; \
             })
-    connect(ui->gbxEnableRecentFiles, &QGroupBox::toggled, [this, reset, save]() { \
-        settings->setEnableRecentFiles(ui->gbxEnableRecentFiles->isChecked()); \
+    connect(gbxEnableRecentFiles, &QGroupBox::toggled, [this, reset, save]() { \
+        settings_->setEnableRecentFiles(gbxEnableRecentFiles->isChecked()); \
         ENABLE_BUTTONS;
     });
-    connect(ui->fbnDefaultFont, &FontButton::changed, [this, reset, save]() { \
-        settings->setFontName(ui->fbnDefaultFont->text()); \
+    connect(fbnDefaultFont, &FontButton::changed, [this, reset, save]() { \
+        settings_->setFontName(fbnDefaultFont->text()); \
         ENABLE_BUTTONS;
     });
     connect(reset, &QPushButton::clicked, [this, reset, save]() {
-        settings->load();
+        settings_->load();
         updateUi();
         DISABLE_BUTTONS;
     });
-    connect(ui->buttonBox, &QDialogButtonBox::accepted, [this, reset, save]() {
-        settings->save();
+    connect(buttonBox, &QDialogButtonBox::accepted, [this, reset, save]() {
+        settings_->save();
         DISABLE_BUTTONS;
     });
-    connect(ui->pbnAbout, &QPushButton::clicked, [this](){
+    connect(pbnAbout, &QPushButton::clicked, [this](){
         Qtilities::DialogAbout about;
         about.exec();
     });
@@ -137,7 +140,7 @@ DialogMain::DialogMain(QWidget *parent)
     CONNECT_SPINBOX(ScaleFactor);
     CONNECT_DOUBLE_SPINBOX(TextScaleFactor);
 #endif
-    if (settings->isWayland()) {
+    if (settings_->isWayland()) {
         CONNECT_COMBOBOX(ColorScheme);
         CONNECT_COMBOBOX(FontAntialiasing);
     } else {
@@ -166,38 +169,37 @@ DialogMain::DialogMain(QWidget *parent)
 
 DialogMain::~DialogMain()
 {
-    delete ui;
 }
 
 void DialogMain::updateUi()
 {
-    if (settings->isWayland()) {
-        ui->cbxColorScheme->setCurrentText(settings->colorScheme());
-        ui->cbxFontAntialiasing->setCurrentText(settings->fontAntialiasing());
+    if (settings_->isWayland()) {
+        cbxColorScheme->setCurrentText(settings_->colorScheme());
+        cbxFontAntialiasing->setCurrentText(settings_->fontAntialiasing());
     } else {
-        ui->chkPreferDarkTheme->setChecked(settings->preferDarkTheme());
-        ui->chkWarpSlider->setChecked(settings->warpSlider());
-        ui->sbxXftDpi->setValue(settings->xftDpi());
-        ui->chkXftAntialias->setCheckState(checkState(settings->xftAntialias()));
-        ui->chkXftHinting->setCheckState(checkState(settings->xftHinting()));
+        chkPreferDarkTheme->setChecked(settings_->preferDarkTheme());
+        chkWarpSlider->setChecked(settings_->warpSlider());
+        sbxXftDpi->setValue(settings_->xftDpi());
+        chkXftAntialias->setCheckState(checkState(settings_->xftAntialias()));
+        chkXftHinting->setCheckState(checkState(settings_->xftHinting()));
     }
-    ui->cbxCursorThemeName->setCurrentText(settings->cursorThemeName());
-    ui->sbxCursorThemeSize->setValue(settings->cursorThemeSize());
-    ui->fbnDefaultFont->setFont(fromName(settings->fontName()));
-    ui->chkEnableEventSounds->setChecked(settings->enableEventSounds());
-    ui->chkEnableInputFeedbackSounds->setChecked(settings->enableInputFeedbackSounds());
-    ui->gbxEnableRecentFiles->setChecked(settings->enableRecentFiles());
-    ui->cbxIconThemeName->setCurrentText(settings->iconThemeName());
-    ui->chkOverlayScrolling->setChecked(settings->overlayScrolling());
-    ui->sbxRecentFilesMaxAge->setValue(settings->recentFilesMaxAge());
-    ui->cbxSoundThemeName->setCurrentText(settings->soundThemeName());
-    ui->cbxThemeName->setCurrentText(settings->themeName());
-    ui->cbxXftHintStyle->setCurrentText(settings->xftHintStyle());
-    ui->cbxXftRgba->setCurrentText(settings->xftRgba());
+    cbxCursorThemeName->setCurrentText(settings_->cursorThemeName());
+    sbxCursorThemeSize->setValue(settings_->cursorThemeSize());
+    fbnDefaultFont->setFont(fromName(settings_->fontName()));
+    chkEnableEventSounds->setChecked(settings_->enableEventSounds());
+    chkEnableInputFeedbackSounds->setChecked(settings_->enableInputFeedbackSounds());
+    gbxEnableRecentFiles->setChecked(settings_->enableRecentFiles());
+    cbxIconThemeName->setCurrentText(settings_->iconThemeName());
+    chkOverlayScrolling->setChecked(settings_->overlayScrolling());
+    sbxRecentFilesMaxAge->setValue(settings_->recentFilesMaxAge());
+    cbxSoundThemeName->setCurrentText(settings_->soundThemeName());
+    cbxThemeName->setCurrentText(settings_->themeName());
+    cbxXftHintStyle->setCurrentText(settings_->xftHintStyle());
+    cbxXftRgba->setCurrentText(settings_->xftRgba());
 #if 0
-//  ui->chkAllowVolumeAbove100->setChecked(settings->allowVolumeAbove100());
-    ui->sbxScaleFactor->setValue(settings->scaleFactor());
-    ui->dsbTextScaleFactor->setValue(settings->textScaleFactor());
+//  chkAllowVolumeAbove100->setChecked(settings_->allowVolumeAbove100());
+    sbxScaleFactor->setValue(settings_->scaleFactor());
+    dsbTextScaleFactor->setValue(settings_->textScaleFactor());
 #endif
 }
 

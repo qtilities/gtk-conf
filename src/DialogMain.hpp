@@ -1,22 +1,24 @@
 #pragma once
 
+#include "ui_DialogMain.h"
+
 #include <QDialog>
 
-namespace Ui {
-class DialogMain;
-}
 class Settings;
 
-class DialogMain : public QDialog
+class DialogMain : public QDialog, private Ui::DialogMain
 {
     Q_OBJECT
-    
+
 public:
     explicit DialogMain(QWidget* parent = nullptr);
     ~DialogMain();
     
 private:
     void updateUi();
+
+    void setupToolTips() ;
+    void setupToolTipsGSettings();
 
     Qt::CheckState checkState(int);
     int            fromCheckState(Qt::CheckState);
@@ -28,7 +30,6 @@ private:
         const QString& searchFilter2 = QString(), const QString& defaultValue = QString()
     ) const;
 
-    Ui::DialogMain* ui;
-    Settings* settings;
+    Settings* settings_;
 };
 
