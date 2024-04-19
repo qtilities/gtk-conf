@@ -115,7 +115,7 @@ DialogMain::DialogMain(QWidget *parent)
         settings_->setEnableRecentFiles(gbxEnableRecentFiles->isChecked()); \
         ENABLE_BUTTONS;
     });
-    connect(fbnDefaultFont, &FontButton::changed, [this, reset, save]() { \
+    connect(fbnDefaultFont, &FontButton::fontChanged, [this, reset, save]() { \
         settings_->setFontName(fbnDefaultFont->text()); \
         ENABLE_BUTTONS;
     });

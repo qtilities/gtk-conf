@@ -16,8 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  *
  */
-#ifndef FM_FONTBUTTON_H
-#define FM_FONTBUTTON_H
+#pragma once
 
 #include <QPushButton>
 
@@ -31,10 +30,10 @@ public:
 
     QFont font() { return font_; }
 
-    void setFont(QFont font);
+    void setFont(const QFont&);
 
 Q_SIGNALS:
-    void changed();
+    void fontChanged(const QFont&);
 
 private Q_SLOTS:
     void onClicked();
@@ -42,5 +41,3 @@ private Q_SLOTS:
 private:
     QFont font_;
 };
-
-#endif // FM_FONTBUTTON_H
