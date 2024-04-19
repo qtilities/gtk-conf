@@ -51,17 +51,17 @@ void DialogMain::setupToolTips() {
     chkOverlayScrolling->setToolTip(
         QString("<h3>gtk-overlay-scrolling</h3><p>") + tr(
         "Whether scrolled windows may use overlaid scrolling indicators. "
-        "If this is set to <b>false</b>, scrolled windows will have permanent scrollbars.") + QString("</p><p>") + tr(
+        "If this is set to %1, scrolled windows will have permanent scrollbars.").arg("<b>FALSE</b>") + QString("</p><p>") + tr(
         "Default value") + QString(": <b>TRUE</b></p>")
     );
     chkWarpSlider->setToolTip(
         QString("<h3>gtk-primary-button-warps-slider</h3><p>") + tr(
-        "If the value of this setting is <b>TRUE</b>, clicking the primary button in a <b>GtkRange</b> "
+        "If the value of this setting is %1, clicking the primary button in a <b>GtkRange</b> "
         "trough will move the slider, and hence set the range’s value, to the point that you clicked. "
-        "If it is <b>FALSE</b>, a primary click will cause the slider/value to move by the range’s "
+        "If it is %2, a primary click will cause the slider/value to move by the range’s "
         "page-size towards the point clicked. Whichever action you choose for the primary button, "
         "the other action will be available by holding <b>Shift</b> and primary-clicking, "
-        "or clicking the middle mouse button.") + QString("</p><p>") + tr(
+        "or clicking the middle mouse button.").arg("<b>TRUE</b>", "<b>FALSE</b>") + QString("</p><p>") + tr(
         "Default value") + QString(": <b>TRUE</b></p>")
     );
     gbxEnableRecentFiles->setToolTip(
@@ -95,31 +95,31 @@ void DialogMain::setupToolTips() {
         QString("<h3>gtk-xft-antialias</h3><p>") + tr(
         "Whether to antialias fonts. "
         "The values are: "
-        "0 for no, 1 for yes or <b>-1</b> for the system default.") + QString("</p>")
+        "0 for no, 1 for yes or %1 for the system default.").arg("<b>-1</b>") + QString("</p>")
     );
     chkXftHinting->setToolTip(
         QString("<h3>gtk-xft-hinting</h3><p>") + tr(
         "Whether to enable font hinting. "
         "The values are: "
-        "0 for no, 1 for yes or <b>-1</b> for the system default.") + QString("</p>")
+        "0 for no, 1 for yes or %1 for the system default.").arg("<b>-1</b>") + QString("</p>")
     );
     lblXftDpi->setToolTip(
         QString("<h3>gtk-xft-dpi</h3><p>") + tr(
         "The font resolution, in 1024 * dots/inch. "
-        "<b>-1</b> to use the default value.") + QString("</p>")
+        "%1 to use the default value.").arg("<b>-1</b>") + QString("</p>")
     );
     lblXftHintStyle->setToolTip(
         QString("<h3>gtk-xft-hintstyle</h3><p>") + tr(
         "What degree of font hinting to use. "
-        "The possible vaues are hintnone, hintslight, hintmedium, hintfull.") + QString("</p><p>") + tr(
+        "The possible values are %1.").arg("hintnone, hintslight, hintmedium, hintfull") + QString("</p><p>") + tr(
         "Default value") + QString(": <b>NULL</b></p>")
     );
     lblXftRgba->setToolTip(
         QString("<h3>gtk-xft-rgba</h3><p>") + tr(
         "The type of subpixel antialiasing to use. "
-        "The possible values are none, rgb, bgr, vrgb, vbgr. "
+        "The possible values are %1. "
         "Note that GSK does not support subpixel antialiasing, "
-        "and this setting has no effect on font rendering in GTK.") + QString("</p><p>") + tr(
+        "and this setting has no effect on font rendering in GTK.").arg("none, rgb, bgr, vrgb, vbgr") + QString("</p><p>") + tr(
         "Default value") + QString(": <b>NULL</b></p>")
     );
 }
@@ -170,8 +170,8 @@ void DialogMain::setupToolTipsGSettings() {
     gbxEnableRecentFiles->setToolTip(
         QString("<h3>privacy/remember-recent-files</h3><p>") + tr(
         "Whether to remember recently used files. "
-        "If FALSE, applications will not remember recently used files.") + QString("</p><p>") + tr(
-        "Default value") + QString(": <b>true</b></p>")
+        "If %1, applications will not remember recently used files.") + QString("</p><p>") + tr(
+        "Default value").arg("<b>FALSE</b>") + QString(": <b>true</b></p>")
     );
     lblRecentFilesMaxAge->setToolTip(
         QString("<h3>privacy/recent-files-max-age</h3><p>") + tr(
@@ -194,28 +194,28 @@ void DialogMain::setupToolTipsGSettings() {
     lblFontAntialiasing->setToolTip(
         QString("<h3>font-antialiasing</h3><p>") + tr(
         "The type of antialiasing to use when rendering fonts. Possible values are: "
-        "“none” for no antialiasing, “grayscale” for standard grayscale antialiasing, "
-        "and “rgba” for subpixel antialiasing (LCD screens only).") + QString("</p><p>") + tr(
+        "%1 for no antialiasing, %2 for standard grayscale antialiasing, "
+        "and %3 for subpixel antialiasing (LCD screens only).").arg("“none”", "“grayscale”", "“rgba”") + QString("</p><p>") + tr(
         "Default value") + QString(": <b>grayscale</b></p>")
     );
     lblXftHintStyle->setToolTip(
         QString("<h3>font-hinting</h3><p>") + tr(
         "The type of hinting to use when rendering fonts. Possible values are: "
-        "“none” for no hinting and “slight” for fitting only to the Y-axis like Microsoft’s ClearType, "
+        "%1 for no hinting and %2 for fitting only to the Y-axis like Microsoft’s ClearType, "
         "DirectWrite and Adobe’s proprietary font rendering engine. Ignores native hinting within the font, "
         "generates hints algorithmically. Used on Ubuntu by default. Recommended. "
-        "The meaning of “medium” and “full” depends on the font format (.ttf, .otf, .pfa/.pfb) "
+        "The meaning of %3 and %4 depends on the font format (.ttf, .otf, .pfa/.pfb) "
         "and the installed version of FreeType. "
         "They usually try to fit glyphs to both the X and the Y axis (except for .otf: Y-only). "
         "This can lead to distortion and/or inconsistent rendering depending on the quality of the font, "
-        "the font format and the state of FreeType’s font engines.") + QString("</p><p>") + tr(
+        "the font format and the state of FreeType’s font engines.").arg("“none”", "“slight”", "“medium”", "“full”") + QString("</p><p>") + tr(
         "Default value") + QString(": <b>slight</b></p>")
     );
     lblXftRgba->setToolTip(
         QString("<h3>font-rgba-order</h3><p>") + tr(
-        "The order of subpixel elements on an LCD screen; only used when antialiasing is set to “rgba”. "
-        "Possible values are: “rgb” for red on left (most common), “bgr” for blue on left, "
-        "“vrgb” for red on top, “vbgr” for red on bottom.") + QString("</p><p>") + tr(
+        "The order of subpixel elements on an LCD screen; only used when antialiasing is set to %1. "
+        "Possible values are: %2 for red on left (most common), %3 for blue on left, "
+        "%4 for red on top, %5 for red on bottom.").arg("“rgba”", "“rgb”", "“bgr”", "“vrgb”", "“vbgr”") + QString("</p><p>") + tr(
         "Default value") + QString(": <b>rgb</b></p>")
     );
 }
