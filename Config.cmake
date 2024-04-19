@@ -4,7 +4,7 @@
 # Essential, non translatable application information (except DESCRIPTION).
 # Translatable strings are passed via code.
 #===============================================================================
-list(APPEND PROJECT_CATEGORIES "Qt;Utility") # Freedesktop menu categories
+list(APPEND PROJECT_CATEGORIES "Settings;DesktopSettings;Qt;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings") # Freedesktop menu categories
 list(APPEND PROJECT_KEYWORDS   "gtk;settings")
 set(PROJECT_ID                 "gtk-conf")
 set(PROJECT_DESCRIPTION        "Configuration tool for GTK system properties")
