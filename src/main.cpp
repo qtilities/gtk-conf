@@ -1,3 +1,10 @@
+/*
+    SPDX-FileCopyrightText:  2024 Andrea Zanellato <redtid3@gmail.com> and Qtilities team
+    SPDX-License-Identifier: GPL-2.0-only
+
+    This file is part of the gtk-conf application project,
+    see AUTHORS and COPYING files for further details.
+*/
 #include "DialogMain.hpp"
 
 #include <QApplication>
