@@ -8,6 +8,7 @@
 #pragma once
 
 #include <QObject>
+#include <QFont>
 #include <QString>
 
 typedef struct _GSettings GSettings;
@@ -97,6 +98,9 @@ public:
     QString xftRgba() const { return xftRgba_; }
     void setXftRgba(const QString& xftRgba) { xftRgba_ = xftRgba; }
 
+    QFont font() const { return font_; }
+    void setFont(const QFont& font) { font_ = font; }
+
 Q_SIGNALS:
     void propertiesChanged();
 
@@ -138,4 +142,5 @@ private:
     QString themeName_;
     QString xftHintStyle_;
     QString xftRgba_;
+    QFont font_;
 };

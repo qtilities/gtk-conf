@@ -8,11 +8,9 @@
 #include "DialogMain.hpp"
 #include "DialogAbout.hpp"
 #include "Settings.hpp"
+#include "Utils.hpp"
 
-#include <QDir>
-#include <QFileInfo>
 #include <QMessageBox>
-#include <QStandardPaths>
 
 DialogMain::DialogMain(QWidget *parent)
     : QDialog(parent)
@@ -59,13 +57,17 @@ DialogMain::DialogMain(QWidget *parent)
     cbxXftHintStyle->addItems(listXftHintStyle);
     cbxXftRgba->addItems(listXftRgba);
 
-    QStringList cursorThemes = findThemes(QStringLiteral("icons"), QStringLiteral("cursors"));
-    QStringList iconThemes   = findThemes(QStringLiteral("icons"), QStringLiteral("16x16"), QStringLiteral("scalable"),
-                                          QStringLiteral("Adwaita"));
-    QStringList soundThemes  = findThemes(QStringLiteral("sounds"), QString(), QString(),
-                                          QStringLiteral("freedesktop"));
-    QStringList gtkThemes    = findThemes(QStringLiteral("themes"), QStringLiteral("/gtk-3.0"), QString(),
-                                          QStringLiteral("Default"));
+    QStringList cursorThemes =
+        Utils::findThemes(QStringLiteral("icons"), QStringLiteral("cursors"));
+    QStringList iconThemes =
+        Utils::findThemes(QStringLiteral("icons"), QStringLiteral("16x16"), QStringLiteral("scalable"),
+                              QStringLiteral("Adwaita"));
+    QStringList soundThemes =
+        Utils::findThemes(QStringLiteral("sounds"), QString(), QString(),
+                              QStringLiteral("freedesktop"));
+    QStringList gtkThemes =
+        Utils::findThemes(QStringLiteral("themes"), QStringLiteral("/gtk-3.0"), QString(),
+                              QStringLiteral("Default"));
 
     cursorThemes.sort(Qt::CaseInsensitive);
     iconThemes.sort(Qt::CaseInsensitive);
@@ -98,7 +100,7 @@ DialogMain::DialogMain(QWidget *parent)
     })
 #define CONNECT_CHECKBOX_TRISTATE(NAME) \
     connect(chk##NAME, &QCheckBox::clicked, [this, reset, save]() { \
-        settings_->set##NAME(fromCheckState(chk##NAME->checkState())); \
+        settings_->set##NAME(Utils::fromCheckState(chk##NAME->checkState())); \
         ENABLE_BUTTONS; \
     })
 #define CONNECT_COMBOBOX(NAME) \
@@ -122,8 +124,9 @@ DialogMain::DialogMain(QWidget *parent)
         settings_->setEnableRecentFiles(gbxEnableRecentFiles->isChecked()); \
         ENABLE_BUTTONS;
     });
-    connect(fbnDefaultFont, &FontButton::fontChanged, [this, reset, save]() { \
+    connect(fbnDefaultFont, &FontButton::fontChanged, [this, reset, save](const QFont& font) { \
         settings_->setFontName(fbnDefaultFont->text()); \
+        settings_->setFont(font);
         ENABLE_BUTTONS;
     });
     connect(reset, &QPushButton::clicked, [this, reset, save]() {
@@ -187,12 +190,12 @@ void DialogMain::updateUi()
         chkPreferDarkTheme->setChecked(settings_->preferDarkTheme());
         chkWarpSlider->setChecked(settings_->warpSlider());
         sbxXftDpi->setValue(settings_->xftDpi());
-        chkXftAntialias->setCheckState(checkState(settings_->xftAntialias()));
-        chkXftHinting->setCheckState(checkState(settings_->xftHinting()));
+        chkXftAntialias->setCheckState(Utils::checkState(settings_->xftAntialias()));
+        chkXftHinting->setCheckState(Utils::checkState(settings_->xftHinting()));
     }
     cbxCursorThemeName->setCurrentText(settings_->cursorThemeName());
     sbxCursorThemeSize->setValue(settings_->cursorThemeSize());
-    fbnDefaultFont->setFont(fromName(settings_->fontName()));
+    fbnDefaultFont->setFont(settings_->font());
     chkEnableEventSounds->setChecked(settings_->enableEventSounds());
     chkEnableInputFeedbackSounds->setChecked(settings_->enableInputFeedbackSounds());
     gbxEnableRecentFiles->setChecked(settings_->enableRecentFiles());
@@ -208,75 +211,4 @@ void DialogMain::updateUi()
     sbxScaleFactor->setValue(settings_->scaleFactor());
     dsbTextScaleFactor->setValue(settings_->textScaleFactor());
 #endif
-}
-
-Qt::CheckState DialogMain::checkState(int state)
-{
-    switch(state) {
-    case -1: return Qt::PartiallyChecked; // System default
-    case 1:  return Qt::Checked;
-    case 0:
-    default: return Qt::Unchecked;
-    }
-}
-
-int DialogMain::fromCheckState(Qt::CheckState state)
-{
-    switch(state) {
-    case Qt::PartiallyChecked: return -1; // System default
-    case Qt::Checked: return 1;
-    case Qt::Unchecked:
-    default: return 0;
-    }
-}
-
-QFont DialogMain::fromName(const QString& fontName)
-{
-    QFont font;
-    int const lastWhiteSpaceIndex = fontName.lastIndexOf(' ');
-    QString fontFamily = fontName.mid(0, lastWhiteSpaceIndex);
-    QString fontSizeStr = fontName.mid(lastWhiteSpaceIndex, fontName.length());
-    bool ok;
-    int fontSize = fontSizeStr.toInt(&ok, 10);
-    if (ok) {
-        font.setFamily(fontFamily);
-        font.setPointSize(fontSize);
-    }
-    return font;
-}
-
-QStringList DialogMain::findThemes(const QString& themeDirName,  const QString& searchFilter,
-                                   const QString& searchFilter2, const QString& defaultValue) const
-{
-    QStringList paths, themes, themesPaths;
-    paths = QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
-    paths.removeDuplicates(); // QStandardPaths seems to add duplicates
-
-    // $HOME/.themes - priority to local themes
-    themesPaths.push_back(QString("%1%2%3").arg(std::getenv("HOME"), QStringLiteral("/."), themeDirName));
-
-    // .local/share/themes:/usr/local/share/themes:/usr/share/themes
-    for(const QString& path : std::as_const(paths)) {
-        QString themesPath = path + '/' + themeDirName;
-        themesPaths.push_back(themesPath);
-    }
-    for(const QString& themesPath : std::as_const(themesPaths)) {
-        QDir themesDir(themesPath);
-        QStringList themeEntries = themesDir.entryList(QDir::Dirs|QDir::NoDotAndDotDot);
-        for (const QString& themeEntry : std::as_const(themeEntries)) {
-            if (themeEntry == QStringLiteral("locolor") || themeEntry == QStringLiteral("hicolor"))
-                continue;
-            QString themePath = themesPath + '/' + themeEntry + '/' + searchFilter;
-            if (QFileInfo::exists(themePath)) //TODO: && QFileInfo(themePath).isFile()) ?
-                themes.push_back(themeEntry);
-            if (!searchFilter2.isNull()) {
-                QString themePath = themesPath + '/' + themeEntry + '/' + searchFilter2;
-                if (QFileInfo::exists(themePath)) //TODO: && QFileInfo(themePath).isFile()) ?
-                    themes.push_back(themeEntry);
-            }
-        }
-    }
-    themes.push_front(defaultValue);
-    themes.removeDuplicates();
-    return themes;
 }

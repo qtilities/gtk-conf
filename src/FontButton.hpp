@@ -35,9 +35,8 @@ public:
 Q_SIGNALS:
     void fontChanged(const QFont&);
 
-private Q_SLOTS:
+private:
     void onClicked();
 
-private:
     QFont font_;
 };

@@ -37,6 +37,7 @@ set(PROJECT_SOURCES
     src/Settings.hpp
     src/Settings.cpp
     src/ToolTips.cpp
+    src/Utils.hpp
     src/main.cpp
 )
 set(PROJECT_OTHER_FILES
