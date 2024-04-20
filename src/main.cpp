@@ -50,15 +50,15 @@ static void initLocale(QTranslator* qtTranslator, QTranslator* translator)
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
+    QTranslator qtTranslator, translator;
+    initLocale(&qtTranslator, &translator);
+
     app.setWindowIcon(QIcon::fromTheme("preferences-desktop-theme"));
     app.setApplicationName(APPLICATION_NAME);
-    app.setApplicationDisplayName(APPLICATION_DISPLAY_NAME);
+    app.setApplicationDisplayName(QObject::tr("GTK Settings"));
     app.setOrganizationName(ORGANIZATION_NAME);
     app.setOrganizationDomain(ORGANIZATION_DOMAIN);
     app.setApplicationVersion(APPLICATION_VERSION);
-
-    QTranslator qtTranslator, translator;
-    initLocale(&qtTranslator, &translator);
 
     DialogMain dialog;
     dialog.show();
