@@ -31,7 +31,7 @@ FontButton::~FontButton()
 void FontButton::onClicked()
 {
     bool ok;
-    QFont font = QFontDialog::getFont(&ok, this);
+    QFont font = QFontDialog::getFont(&ok, font_, this);
     if (ok)
         setFont(font);
 }
