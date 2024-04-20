@@ -279,7 +279,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="202"/>
-        <source>The type of antialiasing to use when rendering fonts. Possible values are: %1 for no antialiasing, %2 for standard grayscale antialiasing, and %3 for subpixel antialiasing (LCD screens only).</source>
+        <source>The type of anti-aliasing to use when rendering fonts. Possible values are: %1 for no anti-aliasing, %2 for standard grayscale anti-aliasing, and %3 for subpixel anti-aliasing (LCD screens only).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -289,7 +289,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="222"/>
-        <source>The order of subpixel elements on an LCD screen; only used when antialiasing is set to %1. Possible values are: %2 for red on left (most common), %3 for blue on left, %4 for red on top, %5 for red on bottom.</source>
+        <source>The order of subpixel elements on an LCD screen; only used when anti-aliasing is set to %1. Possible values are: %2 for red on left (most common), %3 for blue on left, %4 for red on top, %5 for red on bottom.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -329,7 +329,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="125"/>
-        <source>The type of subpixel antialiasing to use. The possible values are %1. Note that GSK does not support subpixel antialiasing, and this setting has no effect on font rendering in GTK.</source>
+        <source>The type of subpixel anti-aliasing to use. The possible values are %1. Note that GSK does not support subpixel anti-aliasing, and this setting has no effect on font rendering in GTK.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
