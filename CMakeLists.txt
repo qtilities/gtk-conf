@@ -45,7 +45,6 @@ set(PROJECT_OTHER_FILES
     .gitattributes
     .gitignore
     README.md
-    gsettings.md
     todo.md
 )
 source_group("" FILES ${PROJECT_SOURCES})
