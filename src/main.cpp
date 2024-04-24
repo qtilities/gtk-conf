@@ -58,6 +58,7 @@ int main(int argc, char* argv[])
     app.setApplicationDisplayName(QObject::tr("GTK Settings"));
     app.setOrganizationName(ORGANIZATION_NAME);
     app.setOrganizationDomain(ORGANIZATION_DOMAIN);
+    app.setDesktopFileName(PROJECT_APPSTREAM_ID);
     app.setApplicationVersion(APPLICATION_VERSION);
 
     DialogMain dialog;
