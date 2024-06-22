@@ -23,10 +23,7 @@ set(PROJECT_TRANSLATIONS_DIR   "${CMAKE_SOURCE_DIR}/resources/translations")
 # Appstream
 #===============================================================================
 set(PROJECT_APPSTREAM_SPDX_ID  "CC0-1.0")
-include(AppStream)
-to_appstream_id("io.github.${PROJECT_ORGANIZATION_NAME}.${PROJECT_NAME}"
-    PROJECT_APPSTREAM_ID
-)
+set(PROJECT_APPSTREAM_ID       "gtk_conf")
 #===============================================================================
 # Adapt to CMake variables
 #===============================================================================
