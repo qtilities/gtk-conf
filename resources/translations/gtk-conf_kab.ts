@@ -1,92 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fi">
+<TS version="2.1" language="kab">
 <context>
     <name>DialogMain</name>
     <message>
         <location filename="../../src/DialogMain.ui" line="47"/>
         <source>Themes</source>
-        <translation>Teemat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="55"/>
         <source>Font</source>
-        <translation>Fontti</translation>
+        <translation>Tasefsit</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="63"/>
         <source>Sound</source>
-        <translation>Ääni</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="71"/>
         <source>Other</source>
-        <translation type="unfinished">Muu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="107"/>
         <source>Color scheme:</source>
-        <translation>Väriteema:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="114"/>
         <source>GTK theme:</source>
-        <translation>GTK-teema:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="137"/>
         <source>Cursor theme:</source>
-        <translation>Kohdistinteema:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="144"/>
         <source>Icon theme:</source>
-        <translation>Kuvaketeema:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="154"/>
         <source>Cursor size:</source>
-        <translation>Kohdistimen koko:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="171"/>
         <source>Prefer dark theme</source>
-        <translation>Suosi tummaa teemaa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="194"/>
         <source>Enable Antialiasing</source>
-        <translation>Käytä antialisointia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="204"/>
         <source>Enable Hinting</source>
-        <translation>Käytä vihjeistystä</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="230"/>
         <source>Resolution:</source>
-        <translation>Resoluutio:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="237"/>
         <source>Default:</source>
-        <translation>Oletus:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="244"/>
         <source>Hinting style:</source>
-        <translation>Vihjeistystyyli:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="277"/>
         <source>RGBA order:</source>
-        <translation>RGBA-järjestys:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="287"/>
         <source>Antialiasing:</source>
-        <translation>Antialisointi:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="304"/>
@@ -96,17 +96,17 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="320"/>
         <source>Allow volume above 100%</source>
-        <translation>Salli voimakkuuden ylittää 100%</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="333"/>
         <source>Play event sounds</source>
-        <translation>Toista tapahtumaäänet</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="340"/>
         <source>Sound theme:</source>
-        <translation>Ääniteema:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="379"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="430"/>
         <source>Recent files</source>
-        <translation>Viimeisimmät tiedostot</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="442"/>
@@ -131,21 +131,19 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="480"/>
         <source>About</source>
-        <translation>Tietoja</translation>
+        <translation>Ɣef</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="85"/>
         <source>Settings changed</source>
-        <translation>Asetukset muutettu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="86"/>
         <source>Some settings have been changed by a different application.
 
 You can reload the new settings by pressing the Reset button, or use Save if you want to keep the current ones.</source>
-        <translation>Eri sovellus on muuttanut joitakin asetuksia.
-
-Voit ladata uudet asetukset uudelleen painamalla Nollaa-painiketta tai käyttää Tallenna-painiketta, jos haluat säilyttää nykyiset.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="17"/>
@@ -177,102 +175,102 @@ Voit ladata uudet asetukset uudelleen painamalla Nollaa-painiketta tai käyttä�
         <location filename="../../src/ToolTips.cpp" line="218"/>
         <location filename="../../src/ToolTips.cpp" line="225"/>
         <source>Default value</source>
-        <translation>Oletusarvo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="15"/>
         <source>Whether the application prefers to use a dark theme. If a GTK theme includes a dark variant, it will be used instead of the configured theme.</source>
-        <translation>Suosiiko sovellus tummaa teemaa. Jos GTK-teema sisältää tumman version, sitä käytetään käyttäjän valitseman sijasta.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="21"/>
         <source>Name of the cursor theme to use. Use %1 to use the default theme.</source>
-        <translation>Käytettävän kohdistinteeman nimi. Syötä %1 käyttääksesi oletusteemaa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="26"/>
         <source>The size to use for cursors. %1 means to use the default size.</source>
-        <translation>Kohdistimien koko. Syötä %1 käyttääksesi oletuskokoa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="31"/>
         <source>Whether to play any event sounds at all. See the Sound Theme Specifications for more information on event sounds and sound themes. GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.</source>
-        <translation>Toistaako mitään tapahtumaääniä ollenkaan. Katso ääniteeman tekniset tiedot (Sound Theme Specifications) saadaksesi lisätietoja tapahtumaäänistä ja ääniteemoista. GTK itse ei tue tapahtumaääniä, sinun on käytettävä ladattavaa moduulia, kuten libcanberra:n mukana tulevaa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="39"/>
         <source>Whether to play event sounds as feedback to user input. See the Sound Theme Specifications for more information on event sounds and sound themes. GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.</source>
-        <translation>Toistaako tapahtumaääniä palautteena käyttäjän syötteeseen. Katso ääniteeman tekniset tiedot (Sound Theme Specifications) saadaksesi lisätietoja tapahtumaäänistä ja ääniteemoista. GTK itse ei tue tapahtumaääniä, sinun on käytettävä ladattavaa moduulia, kuten libcanberra:n mukana tulevaa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="47"/>
         <source>Name of the theme to load. See GtkCssProvider for details about how GTK finds the CSS stylesheet for a theme.</source>
-        <translation>Ladattavan teeman nimi. Katso GtkCssProvider saadaksesi lisätietoja siitä, kuinka GTK löytää CSS-tyylisivun teemalle.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="53"/>
         <source>Name of the icon theme to use. See GtkIconTheme for details about how GTK handles icon themes.</source>
-        <translation>Käytettävän kuvaketeeman nimi. Katso GtkIconTheme saadaksesi lisätietoja siitä, kuinka GTK käsittelee kuvaketeemoja.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="75"/>
         <source>Whether GTK should keep track of items inside the recently used resources list. If set to %1, the list will always be empty.</source>
-        <translation>Pitääkö GTK pitää kirjaa viimeksi käytettyjen resurssien luettelon kohteista. Jos asetus on %1, luettelo on aina tyhjä.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="81"/>
         <source>The maximum age, in days, of the items inside the recently used resources list. Items older than this setting will be excised from the list. If set to 0, the list will always be empty; if set to -1, no item will be removed.</source>
-        <translation type="unfinished">Äskettäin käytettyjen resurssien luettelossa olevien kohteiden enimmäisikä päivinä. Tätä asetusta vanhemmat kohteet poistetaan luettelosta. Jos arvo on 0, luettelo on aina tyhjä; jos arvo on -1, mitään kohdetta ei poisteta.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="88"/>
         <source>The XDG sound theme to use for event sounds. See the Sound Theme Specifications for more information on event sounds and sound themes. GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.</source>
-        <translation>XDG-ääniteema, jota käytetään tapahtumaäänissä. Katso ääniteeman tekniset tiedot (Sound Theme Specifications) saadaksesi lisätietoja tapahtumaäänistä ja ääniteemoista. GTK itse ei tue tapahtumaääniä, sinun on käytettävä ladattavaa moduulia, kuten libcanberra:n mukana tulevaa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="96"/>
         <source>The default font to use. GTK uses the family name and size from this string.</source>
-        <translation>Käytettävä oletusfontti. GTK käyttää perhenimeä ja kokoa tästä merkkijonosta.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="136"/>
         <source>The preferred color scheme for the user interface. Valid values are:</source>
-        <translation>Suosittu väriteema käyttöliittymälle. Sallitut arvot:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="142"/>
         <source>Cursor theme name. Used only by Xservers that support the Xcursor extension.</source>
-        <translation>Kohdistinteeman nimi. Vain X-palvelimet, jotka tukevat Xcursor-laajennusta, käyttävät tätä.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="147"/>
         <source>Size of the cursor used as cursor theme.</source>
-        <translation>Kohdistinteeman käyttämän kohdistimen koko.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="152"/>
         <source>Whether to play sounds on user events.</source>
-        <translation>Toistaako ääniä käyttäjätapahtumissa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="157"/>
         <source>Whether to play sounds on input events.</source>
-        <translation type="unfinished">Toistetaanko ääniä syöttötapahtumissa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="162"/>
         <source>Basename of the default theme used by gtk+.</source>
-        <translation>gtk+:n käyttämän oletusteeman kantanimi.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="167"/>
         <source>Icon theme to use for the panel, nautilus etc.</source>
-        <translation>Kuvaketeema käytettäväksi paneelissa, Nautiluksessa jne.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="172"/>
         <source>Whether scrollbars should be overlayed as indicators. Depending on input devices in use, permanent scrollbars may still be displayed.</source>
-        <translation type="unfinished">Pitäisikö vierityspalkit peittää ilmaisimina. Käytössä olevista syöttölaitteista riippuen pysyvät vierityspalkit voivat silti näkyä.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="184"/>
@@ -282,7 +280,7 @@ Voit ladata uudet asetukset uudelleen painamalla Nollaa-painiketta tai käyttä�
     <message>
         <location filename="../../src/ToolTips.cpp" line="202"/>
         <source>The type of anti-aliasing to use when rendering fonts. Possible values are: %1 for no anti-aliasing, %2 for standard grayscale anti-aliasing, and %3 for subpixel anti-aliasing (LCD screens only).</source>
-        <translation>Antialiasoinnin tyyppi, jota käytetään fonttien hahmontamisessa. Sallitut arvot: %1 poistaa antialisoinnin käytöstä, %2 käyttää harmaasävyistä ja %3 käyttää alikuvapiste-antialiasointia (vain LCD-näytöt).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="209"/>
@@ -297,7 +295,7 @@ Voit ladata uudet asetukset uudelleen painamalla Nollaa-painiketta tai käyttä�
     <message>
         <location filename="../../src/ToolTips.cpp" line="192"/>
         <source>The XDG sound theme to use for event sounds.</source>
-        <translation>XDG-ääniteema, jota käytetään tapahtumaäänissä.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="59"/>
@@ -312,37 +310,37 @@ Voit ladata uudet asetukset uudelleen painamalla Nollaa-painiketta tai käyttä�
     <message>
         <location filename="../../src/ToolTips.cpp" line="102"/>
         <source>Whether to antialias fonts. The values are: 0 for no, 1 for yes or %1 for the system default.</source>
-        <translation>Antialiasioidaanko fontteja. Sallitut arvot: 0 ottaa pois käytöstä, 1 ottaa käyttöön tai %1 käyttää järjestelmän asetusta.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="108"/>
         <source>Whether to enable font hinting. The values are: 0 for no, 1 for yes or %1 for the system default.</source>
-        <translation>Otetaanko fonttivihjeet käyttöön. Sallitut arvot: 0 ottaa pois käytöstä, 1 ottaa käyttöön tai %1 käyttää järjestelmän asetusta.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="114"/>
         <source>The font resolution, in 1024 * dots/inch. %1 to use the default value.</source>
-        <translation>Fontin resoluutio on 1024 * pistettä/tuuma. %1 on oletusarvo.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="119"/>
         <source>What degree of font hinting to use. The possible values are %1.</source>
-        <translation>Kuinka paljon fonttivihjeistystä käytetään. Sallitut arvot ovat %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="125"/>
         <source>The type of subpixel anti-aliasing to use. The possible values are %1. Note that GSK does not support subpixel anti-aliasing, and this setting has no effect on font rendering in GTK.</source>
-        <translation type="unfinished">Käytettävän antialiasoinnin tyyppi alipikseleille. Sallitut arvot ovat %1. Huomaa, että GSK ei tue osapikselin antialiasointia, eikä tällä asetuksella ole vaikutusta kirjasinten hahmonnukseen GTK:ssa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="178"/>
         <source>Whether to remember recently used files. If %1, applications will not remember recently used files.</source>
-        <translation>Muistetaanko äskettäin käytetyt tiedostot. Jos arvo on %1, sovellukset eivät muista äskettäin käytettyjä tiedostoja.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="197"/>
         <source>Name of the default font used by gtk+.</source>
-        <translation>gtk+:n käyttämän oletusfontin nimi.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -350,7 +348,7 @@ Voit ladata uudet asetukset uudelleen painamalla Nollaa-painiketta tai käyttä�
     <message>
         <location filename="../../src/main.cpp" line="52"/>
         <source>GTK Settings</source>
-        <translation>GTK:n asetukset</translation>
+        <translation>Iɣewwaṛen n GTK</translation>
     </message>
 </context>
 <context>
@@ -358,27 +356,27 @@ Voit ladata uudet asetukset uudelleen painamalla Nollaa-painiketta tai käyttä�
     <message>
         <location filename="../../src/DialogAbout.ui" line="39"/>
         <source>Information</source>
-        <translation>Tiedot</translation>
+        <translation>Talɣut</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.ui" line="90"/>
         <source>Authors</source>
-        <translation>Tekijät</translation>
+        <translation>Imeskaren</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.ui" line="144"/>
         <source>License</source>
-        <translation>Lisenssi</translation>
+        <translation>Turagt</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="52"/>
         <source>Author</source>
-        <translation>Tekijä</translation>
+        <translation>Ameskar</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="57"/>
         <source>About</source>
-        <translation>Tietoja</translation>
+        <translation>Ɣef</translation>
     </message>
 </context>
 </TS>
