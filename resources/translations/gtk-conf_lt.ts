@@ -11,17 +11,17 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="55"/>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Šriftas</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="63"/>
         <source>Sound</source>
-        <translation type="unfinished"></translation>
+        <translation>Garsas</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="71"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Kita</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="107"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="154"/>
         <source>Cursor size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Žymeklio dydis:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="171"/>
@@ -56,12 +56,12 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="194"/>
         <source>Enable Antialiasing</source>
-        <translation type="unfinished"></translation>
+        <translation>Įjungti glodinimą</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="204"/>
         <source>Enable Hinting</source>
-        <translation type="unfinished"></translation>
+        <translation>Įjungti taškinę korekciją</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="230"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="244"/>
         <source>Hinting style:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taškinės korekcijos stilius:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="277"/>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="287"/>
         <source>Antialiasing:</source>
-        <translation type="unfinished"></translation>
+        <translation>Glodinimas:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="304"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="333"/>
         <source>Play event sounds</source>
-        <translation type="unfinished"></translation>
+        <translation>Atkurti įvykių garsus</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="340"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="480"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Apie</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="85"/>
@@ -175,7 +175,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
         <location filename="../../src/ToolTips.cpp" line="218"/>
         <location filename="../../src/ToolTips.cpp" line="225"/>
         <source>Default value</source>
-        <translation type="unfinished"></translation>
+        <translation>Numatytoji reikšmė</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="15"/>
@@ -356,7 +356,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/DialogAbout.ui" line="39"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacija</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.ui" line="90"/>
@@ -366,17 +366,17 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/DialogAbout.ui" line="144"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencija</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="52"/>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>Autorius</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="57"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Apie</translation>
     </message>
 </context>
 </TS>
