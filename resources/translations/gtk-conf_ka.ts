@@ -1,149 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="lt">
+<TS version="2.1" language="ka">
 <context>
     <name>DialogMain</name>
     <message>
         <location filename="../../src/DialogMain.ui" line="47"/>
         <source>Themes</source>
-        <translation type="unfinished"></translation>
+        <translation>თემები</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="55"/>
         <source>Font</source>
-        <translation>Šriftas</translation>
+        <translation>ფონტი</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="63"/>
         <source>Sound</source>
-        <translation>Garsas</translation>
+        <translation>ხმები</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="71"/>
         <source>Other</source>
-        <translation>Kita</translation>
+        <translation>სხვა</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="107"/>
         <source>Color scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>ფერების სქემა:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="114"/>
         <source>GTK theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>GTK-ის თემა:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="137"/>
         <source>Cursor theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>კურსორის თემა:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="144"/>
         <source>Icon theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>ხატულების თემა:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="154"/>
         <source>Cursor size:</source>
-        <translation>Žymeklio dydis:</translation>
+        <translation>კურსორის ზომა:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="171"/>
         <source>Prefer dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>მუქი თემის არჩევანი</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="194"/>
         <source>Enable Antialiasing</source>
-        <translation>Įjungti glodinimą</translation>
+        <translation>მომრგვალების ჩართვა</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="204"/>
         <source>Enable Hinting</source>
-        <translation>Įjungti taškinę korekciją</translation>
+        <translation>ჰინტირების ჩართვა</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="230"/>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>გარჩევადობა:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="237"/>
         <source>Default:</source>
-        <translation type="unfinished"></translation>
+        <translation>ნაგულისხმები:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="244"/>
         <source>Hinting style:</source>
-        <translation>Taškinės korekcijos stilius:</translation>
+        <translation>მომრგვალების სტილი:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="277"/>
         <source>RGBA order:</source>
-        <translation type="unfinished"></translation>
+        <translation>RGBA მიმდევრობა:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="287"/>
         <source>Antialiasing:</source>
-        <translation>Glodinimas:</translation>
+        <translation>მომრგვალება:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="304"/>
         <source>Play event sounds as feedback to user input</source>
-        <translation type="unfinished"></translation>
+        <translation>დაიკვრება თუ არა მოვლენის ხმები მომხმარებლის მიერ შეყვანის საპასუხოდ</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="320"/>
         <source>Allow volume above 100%</source>
-        <translation type="unfinished"></translation>
+        <translation>ხმის 100%-ზე მეტად აწევის დაშვება</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="333"/>
         <source>Play event sounds</source>
-        <translation>Atkurti įvykių garsus</translation>
+        <translation>მოვლენის ხმების დაკვრა</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="340"/>
         <source>Sound theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>ხმის თემა:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="379"/>
         <source>Enable overlay scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>განლაგების გადახვევის ჩართვა</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="386"/>
         <source>Primary button warps slider</source>
-        <translation type="unfinished"></translation>
+        <translation>თაგუნას ძირითადი ღილაკი ჩოჩიას წაანაცვლებს</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="430"/>
         <source>Recent files</source>
-        <translation type="unfinished"></translation>
+        <translation>უახლესი ფაილები</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="442"/>
         <source>Max age:</source>
-        <translation type="unfinished"></translation>
+        <translation>მაქს. ასაკი:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="480"/>
         <source>About</source>
-        <translation>Apie</translation>
+        <translation>შესახებ</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="85"/>
         <source>Settings changed</source>
-        <translation type="unfinished"></translation>
+        <translation>პარამეტრები შეიცვალა</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="86"/>
         <source>Some settings have been changed by a different application.
 
 You can reload the new settings by pressing the Reset button, or use Save if you want to keep the current ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>ზოგიერთი პარამეტრი სხვა აპლიკაციის მიერ შეიცვალა.
+
+შეგიძლიათ, ახალი პარამეტრები ჩამოყრის ღილაკით ჩატვირთოთ, ან გამოიყენეთ შენახვის ღილაკი, რომ მიმდინარე პარამეტრები შეინარჩუნოთ.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="17"/>
@@ -175,27 +177,27 @@ You can reload the new settings by pressing the Reset button, or use Save if you
         <location filename="../../src/ToolTips.cpp" line="218"/>
         <location filename="../../src/ToolTips.cpp" line="225"/>
         <source>Default value</source>
-        <translation>Numatytoji reikšmė</translation>
+        <translation>ნაგულისხმევი მნიშვნელობა</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="15"/>
         <source>Whether the application prefers to use a dark theme. If a GTK theme includes a dark variant, it will be used instead of the configured theme.</source>
-        <translation type="unfinished"></translation>
+        <translation>ურჩევნია თუ არა აპლიკაციას, მუქი თემა გამოიყენოს. თუ GTK-ის თემა მუქ ვარიანტსაც შეიცავს, მორგებული თემის მაგიერ ის იქნება გამოყენებული.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="21"/>
         <source>Name of the cursor theme to use. Use %1 to use the default theme.</source>
-        <translation type="unfinished"></translation>
+        <translation>კურსორის თემის სახელი. გამოიყენეთ %1 ნაგულისხმევი თემისთვის.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="26"/>
         <source>The size to use for cursors. %1 means to use the default size.</source>
-        <translation type="unfinished"></translation>
+        <translation>კურსორის ზომა. %1 ნაგულისხმევს ნიშნავს.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="31"/>
         <source>Whether to play any event sounds at all. See the Sound Theme Specifications for more information on event sounds and sound themes. GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.</source>
-        <translation type="unfinished"></translation>
+        <translation>დაიკვრება თუ არა მოვლენის ხმები. იხილეთ ხმის თემის სპეციფიკაციები მეტი ინფორმაციისთვის მოვლენის ხმებისა და ხმის თემების შესახებ. GTK-ს თვითონ მოვლენის ხმების მხარდაჭერა არ გააჩნია. დაგჭირდებათ გამოიყენოთ ჩატვირთვადი მოდულები, მაგალითად, libcanberra-ს რომელიც მოჰყვება.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="39"/>
@@ -240,37 +242,37 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="142"/>
         <source>Cursor theme name. Used only by Xservers that support the Xcursor extension.</source>
-        <translation type="unfinished"></translation>
+        <translation>კურსორის თემის სახელი. გამოიყენება, მხოლოდ, Xcursor-ის გაფართოების მქონე Xserver-ების მიერ.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="147"/>
         <source>Size of the cursor used as cursor theme.</source>
-        <translation type="unfinished"></translation>
+        <translation>კურსორის თემად გამოყენებული კურსორის ზომა.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="152"/>
         <source>Whether to play sounds on user events.</source>
-        <translation type="unfinished"></translation>
+        <translation>იკვრება თუ არა ხმა მომხმარებლის მოვლენებისთვის.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="157"/>
         <source>Whether to play sounds on input events.</source>
-        <translation type="unfinished"></translation>
+        <translation>იკვრება თუ არა ხმა შეყვანს მოვლენებისთვის.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="162"/>
         <source>Basename of the default theme used by gtk+.</source>
-        <translation type="unfinished"></translation>
+        <translation>GTK+-ის მიერ ნაგულისხმევად გამოყენებული თემის საბაზისო სახელი.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="167"/>
         <source>Icon theme to use for the panel, nautilus etc.</source>
-        <translation type="unfinished"></translation>
+        <translation>პანელის, Nautilus-ის და ა.შ. გამოყენებული ხატულის თემა.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="172"/>
         <source>Whether scrollbars should be overlayed as indicators. Depending on input devices in use, permanent scrollbars may still be displayed.</source>
-        <translation type="unfinished"></translation>
+        <translation>გამოჩნდება თუ არა ჩოჩიები ინდიკატორებად. გამოყენებული შეყვანის მოწყობილობაზე დამოკიდებულებით, შეიძლება, მუდმივი ჩოჩიები გაჩვენოთ.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="184"/>
@@ -295,7 +297,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="192"/>
         <source>The XDG sound theme to use for event sounds.</source>
-        <translation type="unfinished"></translation>
+        <translation>ხმოვანი მოვლენებისთვის გამოყენებული XDG ხმის თემა.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="59"/>
@@ -340,7 +342,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="197"/>
         <source>Name of the default font used by gtk+.</source>
-        <translation type="unfinished"></translation>
+        <translation>GTK+-ის მიერ ნაგულისხმევად გამოყენებული ფონტის სახელი.</translation>
     </message>
 </context>
 <context>
@@ -356,27 +358,27 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/DialogAbout.ui" line="39"/>
         <source>Information</source>
-        <translation>Informacija</translation>
+        <translation>ინფორმაცია</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.ui" line="90"/>
         <source>Authors</source>
-        <translation type="unfinished"></translation>
+        <translation>ავტორები</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.ui" line="144"/>
         <source>License</source>
-        <translation>Licencija</translation>
+        <translation>ლიცენზია</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="52"/>
         <source>Author</source>
-        <translation>Autorius</translation>
+        <translation>ავტორი</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="57"/>
         <source>About</source>
-        <translation>Apie</translation>
+        <translation>შესახებ</translation>
     </message>
 </context>
 </TS>
