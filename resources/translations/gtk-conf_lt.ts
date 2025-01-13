@@ -6,7 +6,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="47"/>
         <source>Themes</source>
-        <translation type="unfinished"></translation>
+        <translation>Apipavidalinimai</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="55"/>
@@ -26,22 +26,22 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="107"/>
         <source>Color scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Spalvų rinkinys:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="114"/>
         <source>GTK theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>GTK apipavidalinimas:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="137"/>
         <source>Cursor theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Žymeklio apipavidalinimas:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="144"/>
         <source>Icon theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Piktogramų apipavidalinimas:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="154"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="171"/>
         <source>Prefer dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Teikti pirmenybę tamsiam apipavidalinimui</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="194"/>
@@ -66,12 +66,12 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="230"/>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Raiška:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="237"/>
         <source>Default:</source>
-        <translation type="unfinished"></translation>
+        <translation>Numatytasis:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="244"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="277"/>
         <source>RGBA order:</source>
-        <translation type="unfinished"></translation>
+        <translation>RGBA tvarka:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="287"/>
@@ -91,12 +91,12 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="304"/>
         <source>Play event sounds as feedback to user input</source>
-        <translation type="unfinished"></translation>
+        <translation>Atkurti įvykių garsus kaip naudotojo įvesties grįžtamąjį ryšį</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="320"/>
         <source>Allow volume above 100%</source>
-        <translation type="unfinished"></translation>
+        <translation>Leisti didesnį kaip 100% garsį</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="333"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="340"/>
         <source>Sound theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Garsų apipavidalinimas:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="379"/>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../../src/DialogMain.cpp" line="85"/>
         <source>Settings changed</source>
-        <translation type="unfinished"></translation>
+        <translation>Nustatymai pasikeitė</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="86"/>
@@ -235,7 +235,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="136"/>
         <source>The preferred color scheme for the user interface. Valid values are:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pageidaujamas naudotojo sąsajai naudojamas spalvų rinkinys. Tinkamos reikšmės yra:</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="142"/>
