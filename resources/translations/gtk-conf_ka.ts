@@ -202,42 +202,42 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="39"/>
         <source>Whether to play event sounds as feedback to user input. See the Sound Theme Specifications for more information on event sounds and sound themes. GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.</source>
-        <translation type="unfinished"></translation>
+        <translation>დაიკვრება თუ არა ხმა, როგორც მომხმარებლის შეყვანის უკუკავშირი. იხილეთ ხმის თემების სპეციფიკაციები მეტი ინფორმაციისთვის მოვლენის ხმებისა და ხმის თემების შესახებ. GTK-ს თვითონ მოვლენის ხმის მხარდაჭერა არ გააჩნია, ამიტომ უნდა გამოიყენოთ ჩატვირთვადი მოდულები, მაგალითად, როგორიც libcanberra-ს მოჰყვება.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="47"/>
         <source>Name of the theme to load. See GtkCssProvider for details about how GTK finds the CSS stylesheet for a theme.</source>
-        <translation type="unfinished"></translation>
+        <translation>ჩასატვირთი თემის სახელი. იმისათვის, რომ გაიგოთ, როგორ პოულობს GTK CSS სტილების ცხრილს თემისთვის, იხილეთ GtkCssProvider.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="53"/>
         <source>Name of the icon theme to use. See GtkIconTheme for details about how GTK handles icon themes.</source>
-        <translation type="unfinished"></translation>
+        <translation>ხატულების თემის სახელი. იმისათვის, რომ გაიგოთ, როგორ მუშაობს GTK-ის ხატულას თემები, იხილეთ GtkIconTheme.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="75"/>
         <source>Whether GTK should keep track of items inside the recently used resources list. If set to %1, the list will always be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>უნდა შეინახოს თუ არა GTK-მა ელემენტები ახლახანს გამოყენებული რესურსების სიაში. თუ დაყენებულია %1, სია, ყოველთვის, ცარიელი იქნება.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="81"/>
         <source>The maximum age, in days, of the items inside the recently used resources list. Items older than this setting will be excised from the list. If set to 0, the list will always be empty; if set to -1, no item will be removed.</source>
-        <translation type="unfinished"></translation>
+        <translation>მაქსიმალური ასაკი, დღეებში, ელემენტებისთვის ახლახანს გამოყენებული რესურსების სიაში. დაყენებულ მნიშვნელობაზე ბებერი ელემენტები ავტომატურად წაიშლება. თუ დააყენებთ 0-ს, სია, ყოველთვის, ცარიელი იქნება. თუ დააყენებთ მნიშვნელობას -1, ელემენტები არ წაიშლება.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="88"/>
         <source>The XDG sound theme to use for event sounds. See the Sound Theme Specifications for more information on event sounds and sound themes. GTK itself does not support event sounds, you have to use a loadable module like the one that comes with libcanberra.</source>
-        <translation type="unfinished"></translation>
+        <translation>XDG-ის ხმის თემა მოვლენის ხმებისთვის. იხილეთ ხმის თემის სპეციფიკაცია მოვლენის ხმებისა და ხმის თემების შესახებ. GTK-ს თვითონ მოვლენის ხმების მხარდაჭერა არ გააჩნია. უნდა გამოიყენოთ ჩატვირთვადი მოდულები, მაგალითად, როგორიც libcanberra-ს მოჰყვება.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="96"/>
         <source>The default font to use. GTK uses the family name and size from this string.</source>
-        <translation type="unfinished"></translation>
+        <translation>ნაგულისხმევი ფონტი. GTK ამ სტრიქონიდან ოჯახის სახელს და ზომას იყენებს.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="136"/>
         <source>The preferred color scheme for the user interface. Valid values are:</source>
-        <translation type="unfinished"></translation>
+        <translation>არჩეული ფერის სქემა ინტერფეისისთვის. სწორი მნიშვნელობებია:</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="142"/>
@@ -277,7 +277,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="184"/>
         <source>Number of days to remember recently used files for. Recently used files will be remembered for this many days. If set to 0, recent files will not be remembered; if set to -1, they will be retained indefinitely.</source>
-        <translation type="unfinished"></translation>
+        <translation>დამახსოვრებული დღეების რაოდენობა ახლახან გამოყენებული ფაილებისთვის. ისინი ამდენი დღის განმავლობაში იქნება დამხსოვრებული. თუ დააყენებთ ნულზე, ფაილები დამახსოვრებული არ იქნება. -1 კი - ისინი სამუდამოდ იქნება დამახსოვრებული.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="202"/>
