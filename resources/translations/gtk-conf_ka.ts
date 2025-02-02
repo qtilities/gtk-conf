@@ -282,17 +282,17 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="202"/>
         <source>The type of anti-aliasing to use when rendering fonts. Possible values are: %1 for no anti-aliasing, %2 for standard grayscale anti-aliasing, and %3 for subpixel anti-aliasing (LCD screens only).</source>
-        <translation type="unfinished"></translation>
+        <translation>მოგლუვების ტიპი ფონტების რენდერისას. შესაძლო მნიშვნელობებია: %1 მოგლუვების გარეშე, %2 სტანდარტული ნაცრისფერი მოგლუვებისთვის და %3 ქვეპიქსელური მოგლუვებისთვის (მხოლოდ, LCD ეკრანებისთვის).</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="209"/>
         <source>The type of hinting to use when rendering fonts. Possible values are: %1 for no hinting and %2 for fitting only to the Y-axis like Microsoft’s ClearType, DirectWrite and Adobe’s proprietary font rendering engine. Ignores native hinting within the font, generates hints algorithmically. Used on Ubuntu by default. Recommended. The meaning of %3 and %4 depends on the font format (.ttf, .otf, .pfa/.pfb) and the installed version of FreeType. They usually try to fit glyphs to both the X and the Y axis (except for .otf: Y-only). This can lead to distortion and/or inconsistent rendering depending on the quality of the font, the font format and the state of FreeType’s font engines.</source>
-        <translation type="unfinished"></translation>
+        <translation>ჰინტინგის ტიპი ფონტების რენდერისთვის. შესაძლო მნიშვნელობებია: %1 ჰინტინგის გამოსართავად და %2 მხოლოდ, Y ღერძზე დასატევად Microsoft Cleartype-ის, DirectWrite-ის და Adobe-ის დახურული ფონტების რენდერის ძრავის მსგავსად. გამოტოვებს ფონტის შიგნით არსებულ ჰინტინგს და აგენერირებს ჰინტის ალგორითმულად. ნაგულისხმევად გამოიყენება Ubuntu-ზე. რეკომენდებულია. %3-ის და %4-ის მნიშვნელობა დამოკიდებულია ფონტის ფორმატზე (.ttf, .otf, .pfa/.pfb) და Freetype-ის დაყენებულ ვერსიაზე. ჩვეულებრივ, გლიფების ჩატევა ორივე, X და Y ღერძებზე ხდება. (.otf-ის გარდა, ის, მხოლოდ, Y ღერძზე). ამან შეიძლება გამოიწვიოს დამახინჯება და არამდგრადი რენდერი, ფონტის ხარისხზე, ფორმატზე და FreeType-ის ფონტის ძრავების მდგომარეობაზე დამოკიდებულებით.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="222"/>
         <source>The order of subpixel elements on an LCD screen; only used when anti-aliasing is set to %1. Possible values are: %2 for red on left (most common), %3 for blue on left, %4 for red on top, %5 for red on bottom.</source>
-        <translation type="unfinished"></translation>
+        <translation>ქვეპიქსელის ელემენტების მიმდევრობა LCD ეკრანზე. გამოიყენება, მხოლოდ, მაშინ, როცა მოგლუვება %1-ზეა დაყენებული. შესაძლო მნიშვნელობებია: %2 წითლისთვის მარცხნივ (ყველაზე ხშირად), %3 ლურჯისთვის მარცხნივ, %4 წითლისთვის ზემოთ და %5 წითლისთვის ქვემოთ.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="192"/>
@@ -302,42 +302,42 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="59"/>
         <source>Whether scrolled windows may use overlaid scrolling indicators. If this is set to %1, scrolled windows will have permanent scrollbars.</source>
-        <translation type="unfinished"></translation>
+        <translation>შეუძლიათ თუ არა გადახვევად ფანჯრებს ზემოდან დადებული ჩოჩიები გამოიყენოს. თუ დაყენებულია %1-ზე, გადახვევად ფანჯრებს მუდმივი ჩოჩიები ექნებათ.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="65"/>
         <source>If the value of this setting is %1, clicking the primary button in a &lt;b&gt;GtkRange&lt;/b&gt; trough will move the slider, and hence set the range’s value, to the point that you clicked. If it is %2, a primary click will cause the slider/value to move by the range’s page-size towards the point clicked. Whichever action you choose for the primary button, the other action will be available by holding &lt;b&gt;Shift&lt;/b&gt; and primary-clicking, or clicking the middle mouse button.</source>
-        <translation type="unfinished"></translation>
+        <translation>თუ ამ პარამეტრის მნიშვნელობაა %1, &lt;b&gt;GtkRange&lt;/b&gt;-ში ძირითად ღილაკზე დაწკაპუნება გაამოძრავებს ჩოჩიას და დააყენებს შუალედის მნიშვნელობას წერტილზე, რომელზეც დააწკაპუნეთ. თუ არის %2, ძირითადი წკაპი აიძულებს ჩოჩიას, გადაადგილდეს შუალედის გვერდის ზომით დაწკაპუნებული წერტილისკენ. რომელი ქმედებაც არ უნდა აირჩიოთ ძირითადი ღილაკისთვის, სხვა ქმედება &lt;b&gt;Shift&lt;/b&gt;-ზე დაჭერით და ძირითადი წკაპით, ან თაგუნას შუა ღილაკით იქნება ხელმისაწვდომი.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="102"/>
         <source>Whether to antialias fonts. The values are: 0 for no, 1 for yes or %1 for the system default.</source>
-        <translation type="unfinished"></translation>
+        <translation>მოხდება თუ არა ფონტების მოგლუვება. მნიშვნელობებია: 0 არასთვის, 1 დიახ და %1 სისტემის ნაგულისხმევისთვის.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="108"/>
         <source>Whether to enable font hinting. The values are: 0 for no, 1 for yes or %1 for the system default.</source>
-        <translation type="unfinished"></translation>
+        <translation>ჩაირთოს თუ არა ფონტების ჰინტინგი. მნიშვნელობებია: 0 - არა, 1 - კი, ან %1 სისტემის ნაგულისხმევისთვის.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="114"/>
         <source>The font resolution, in 1024 * dots/inch. %1 to use the default value.</source>
-        <translation type="unfinished"></translation>
+        <translation>ფონტის გაფართოება, ერთეულით 1024 * წერტილი/დუიმი. %1 ნაგულისხმევი მნიშვნელობის გამოსაყენებლად.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="119"/>
         <source>What degree of font hinting to use. The possible values are %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>ჰინტინგის ხარისხი. შესაძლო მნიშვნელობებია %1.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="125"/>
         <source>The type of subpixel anti-aliasing to use. The possible values are %1. Note that GSK does not support subpixel anti-aliasing, and this setting has no effect on font rendering in GTK.</source>
-        <translation type="unfinished"></translation>
+        <translation>ქვეპიქსელის მოგლუვების ტიპი. შესაძლო მნიშვნელობებია %1. დაიმახსოვრეთ, რომ GSK-ს ქვეპიქსელის მოგლუვების მხარდაჭერა არ აქვს და ამ პრამეტრს GTK-ის ფონტების რენდერზე გავლენა არ ექნება.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="178"/>
         <source>Whether to remember recently used files. If %1, applications will not remember recently used files.</source>
-        <translation type="unfinished"></translation>
+        <translation>იქნება თუ არა დამახსოვრებული უახლესი გამოყენებული ფაილები. თუ %1, აპლიკაციები არ დაიმახსოვრებენ უახლეს ფაილებს.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="197"/>
@@ -350,7 +350,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/main.cpp" line="52"/>
         <source>GTK Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>GTK-ის მორგება</translation>
     </message>
 </context>
 <context>
