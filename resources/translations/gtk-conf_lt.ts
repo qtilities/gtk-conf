@@ -121,12 +121,12 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="430"/>
         <source>Recent files</source>
-        <translation type="unfinished"></translation>
+        <translation>Paskiausiai naudoti failai</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="442"/>
         <source>Max age:</source>
-        <translation type="unfinished"></translation>
+        <translation>Didžiausias amžius:</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="480"/>
@@ -143,7 +143,9 @@
         <source>Some settings have been changed by a different application.
 
 You can reload the new settings by pressing the Reset button, or use Save if you want to keep the current ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kai kuriuos nustatymus pakeitė kita programa.
+
+Galite įkelti naujus nustatymus iš naujo, paspausdami mygtuką „Atstatyti“, arba naudokite mygtuką „Įrašyti“, jei norite palikti esamus nustatymus.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="17"/>
@@ -180,17 +182,17 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="15"/>
         <source>Whether the application prefers to use a dark theme. If a GTK theme includes a dark variant, it will be used instead of the configured theme.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ar programa teikia pirmenybę tamsiam apipavidalinimui. Jei GTK apipavidalinime yra tamsus variantas, tuomet bus naudojamas jis, o ne konfigūruotas apipavidalinimas.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="21"/>
         <source>Name of the cursor theme to use. Use %1 to use the default theme.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žymeklio apipavidalinimo, kurį naudoti, pavadinimas. Naudokite %1 norėdami naudoti numatytąjį apipavidalinimą.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="26"/>
         <source>The size to use for cursors. %1 means to use the default size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žymekliams taikomas dydis. %1 reiškia naudoti numatytąjį dydį.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="31"/>
@@ -205,12 +207,12 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="47"/>
         <source>Name of the theme to load. See GtkCssProvider for details about how GTK finds the CSS stylesheet for a theme.</source>
-        <translation type="unfinished"></translation>
+        <translation>Apipavidalinimo, kurį įkelti, pavadinimas. Žiūrėkite GtkCssProvider, kad rastumėte daugiau informacijos apie tai, kaip GTK suranda apipavidalinimui skirtą CSS stilių aprašą.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="53"/>
         <source>Name of the icon theme to use. See GtkIconTheme for details about how GTK handles icon themes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Piktogramų apipavidalinimo, kurį naudoti, pavadinimas. Žiūrėkite GtkIconTheme, kad rastumėte informaciją apie tai, kaip GTK apdoroja piktogramų apipavidalinimus.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="75"/>
@@ -230,7 +232,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/ToolTips.cpp" line="96"/>
         <source>The default font to use. GTK uses the family name and size from this string.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šriftas, kuris bus naudojamas pagal numatymą. GTK iš šios eilutės naudoja šrifto pavadinimą ir dydį.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="136"/>

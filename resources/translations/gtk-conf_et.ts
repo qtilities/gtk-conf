@@ -282,17 +282,17 @@ Sa võid laadida uued seadistused vajutades nuppu „Lähtesta“ või kasutades
     <message>
         <location filename="../../src/ToolTips.cpp" line="202"/>
         <source>The type of anti-aliasing to use when rendering fonts. Possible values are: %1 for no anti-aliasing, %2 for standard grayscale anti-aliasing, and %3 for subpixel anti-aliasing (LCD screens only).</source>
-        <translation>Fontide kuvamisel kasutatav sakitõrje tüüp. Võimalikud väärtused on: %1 sakitõrje puudub, %2 tavalinemustvalge skaala sakitõrje ja %3 alampikslikohane sakitõrje (vaid LCD ekraanidel).</translation>
+        <translation>Fontide kuvamisel kasutatav sakitõrje tüüp. Võimalikud väärtused on: „%1“ sakitõrje puudub, „%2“ tavaline mustvalge sakitõrje ja „%3“ alampikslikohane sakitõrje (vaid LCD ekraanidel).</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="209"/>
         <source>The type of hinting to use when rendering fonts. Possible values are: %1 for no hinting and %2 for fitting only to the Y-axis like Microsoft’s ClearType, DirectWrite and Adobe’s proprietary font rendering engine. Ignores native hinting within the font, generates hints algorithmically. Used on Ubuntu by default. Recommended. The meaning of %3 and %4 depends on the font format (.ttf, .otf, .pfa/.pfb) and the installed version of FreeType. They usually try to fit glyphs to both the X and the Y axis (except for .otf: Y-only). This can lead to distortion and/or inconsistent rendering depending on the quality of the font, the font format and the state of FreeType’s font engines.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vihjamise tüüp fontide renderdamisel. Võimalikud väärtused on: „%1“ vihjamine puudub ja „%2“ sobitumiseks vaid Y-teljele nagu see toimib Microsofti ClearType, DirectWrite&apos;i ja Adobe suletud lähtekoodil põhinevas renderdusmootoris. Seejuures loomulik vihjamine fondi sees ei toimi ja vihjed luuakse algoritmiliselt. Seda näiteks kasutab vaikimisi Ubuntu ja soovitame meiegi. „%3“ ja „%4“ tähendus sõltub fondi vormingust (.ttf, .otf, .pfa/.pfb) ja FreeType&apos;i teegi paigaldatud versioonist. Nad üldiselt üritavad glüüfe paigutada X ja Y teljele (erandiks on .odt-fondid, kus paigutus toimib vaid Y-teljele). See aga võib põhjustada moonutusi ja/või ebajärjekindlat renderdamist. Mis täpselt juhtub, sõltub fondi kvaliteedist, fondi vormingust ja FreeType&apos;i teegi olekust.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="222"/>
         <source>The order of subpixel elements on an LCD screen; only used when anti-aliasing is set to %1. Possible values are: %2 for red on left (most common), %3 for blue on left, %4 for red on top, %5 for red on bottom.</source>
-        <translation>Alampiksli elementide järjekord LCD-ekraanidel; kasutusel ainult siis, kui sakitõrje tüüp on %1. Võimalikud väärtused on: %2 punane vasakul (kõige tavalisem), %3 sinine vasakul, %4 punane ülal, %5 punane all.</translation>
+        <translation>Alampiksli elementide järjekord LCD-ekraanidel; kasutusel ainult siis, kui sakitõrje tüüp on „%1“. Võimalikud väärtused on: „%2“ punane vasakul (kõige tavalisem), „%3“ sinine vasakul, „%4“ punane ülal, „%5“ punane all.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="192"/>
@@ -302,12 +302,12 @@ Sa võid laadida uued seadistused vajutades nuppu „Lähtesta“ või kasutades
     <message>
         <location filename="../../src/ToolTips.cpp" line="59"/>
         <source>Whether scrolled windows may use overlaid scrolling indicators. If this is set to %1, scrolled windows will have permanent scrollbars.</source>
-        <translation type="unfinished"></translation>
+        <translation>Määrab, kas keritavad aknad võivad kasutada ajutist kerimisriba ülekatet. Kui väärtuseks on %1, siis akendel saavad olema püsivad kerimisribad.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="65"/>
         <source>If the value of this setting is %1, clicking the primary button in a &lt;b&gt;GtkRange&lt;/b&gt; trough will move the slider, and hence set the range’s value, to the point that you clicked. If it is %2, a primary click will cause the slider/value to move by the range’s page-size towards the point clicked. Whichever action you choose for the primary button, the other action will be available by holding &lt;b&gt;Shift&lt;/b&gt; and primary-clicking, or clicking the middle mouse button.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kui selle seadistuse väärtus on „%1“, siis esmase &lt;b&gt;„GtkRange“&lt;/b&gt; nupu klõpsimine liigutab liugurit sinnamaale, kuhu klõpsisid ja samaga määrab ka vahemiku väärtuse. Kui väärtuseks on „%2“, siis esmane klõps muudab vahemiku väärtust ja seega liigutab edasi lehekülje kaupa. Ükspuha kumma eelistuse määrad esimeseks, siis teine valik on alati kasutatav hoides esmase klõpsu ajal all „&lt;b&gt;Shift&lt;/b&gt;“ klahvi või kasutades keskmist hiireklõpsu.</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="102"/>
