@@ -6,137 +6,137 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="47"/>
         <source>Themes</source>
-        <translation type="unfinished"></translation>
+        <translation>主題</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="55"/>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation>字型</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="63"/>
         <source>Sound</source>
-        <translation type="unfinished"></translation>
+        <translation>音效</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="71"/>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>其它</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="107"/>
         <source>Color scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>顏色方案：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="114"/>
         <source>GTK theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>GTK 主題：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="137"/>
         <source>Cursor theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>游標主題：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="144"/>
         <source>Icon theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>圖示主題：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="154"/>
         <source>Cursor size:</source>
-        <translation type="unfinished"></translation>
+        <translation>游標大小：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="171"/>
         <source>Prefer dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>偏好暗色主題</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="194"/>
         <source>Enable Antialiasing</source>
-        <translation type="unfinished"></translation>
+        <translation>啟用抗鋸齒</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="204"/>
         <source>Enable Hinting</source>
-        <translation type="unfinished"></translation>
+        <translation>啟用提示</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="230"/>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>解析度：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="237"/>
         <source>Default:</source>
-        <translation type="unfinished"></translation>
+        <translation>預設：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="244"/>
         <source>Hinting style:</source>
-        <translation type="unfinished"></translation>
+        <translation>提示樣式：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="277"/>
         <source>RGBA order:</source>
-        <translation type="unfinished"></translation>
+        <translation>RGBA 順序：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="287"/>
         <source>Antialiasing:</source>
-        <translation type="unfinished"></translation>
+        <translation>抗鋸齒：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="304"/>
         <source>Play event sounds as feedback to user input</source>
-        <translation type="unfinished"></translation>
+        <translation>播放事件音效作為對使用者輸入的回應</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="320"/>
         <source>Allow volume above 100%</source>
-        <translation type="unfinished"></translation>
+        <translation>允許音量高於 100%</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="333"/>
         <source>Play event sounds</source>
-        <translation type="unfinished"></translation>
+        <translation>播放事件音效</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="340"/>
         <source>Sound theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>音效主題：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="379"/>
         <source>Enable overlay scrolling</source>
-        <translation type="unfinished"></translation>
+        <translation>啟用覆蓋捲動</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="386"/>
         <source>Primary button warps slider</source>
-        <translation type="unfinished"></translation>
+        <translation>主要按鈕捲動滑鍵</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="430"/>
         <source>Recent files</source>
-        <translation type="unfinished"></translation>
+        <translation>目前檔案</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="442"/>
         <source>Max age:</source>
-        <translation type="unfinished"></translation>
+        <translation>時間上限：</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="480"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>關於</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="85"/>
         <source>Settings changed</source>
-        <translation type="unfinished"></translation>
+        <translation>設定已經變更</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="86"/>
@@ -348,7 +348,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/main.cpp" line="52"/>
         <source>GTK Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>GTK 設定</translation>
     </message>
 </context>
 <context>
@@ -356,27 +356,27 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/DialogAbout.ui" line="39"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>資訊</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.ui" line="90"/>
         <source>Authors</source>
-        <translation type="unfinished"></translation>
+        <translation>作者</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.ui" line="144"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>授權</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="52"/>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>作者</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="57"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>關於</translation>
     </message>
 </context>
 </TS>
