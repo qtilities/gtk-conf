@@ -26,32 +26,32 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="107"/>
         <source>Color scheme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Esquèma de colors :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="114"/>
         <source>GTK theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tèma GTK :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="137"/>
         <source>Cursor theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tèma del cursor :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="144"/>
         <source>Icon theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tèma d’icònas :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="154"/>
         <source>Cursor size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Talha del cursor :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="171"/>
         <source>Prefer dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferir un tèma fosc</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="194"/>
@@ -66,12 +66,12 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="230"/>
         <source>Resolution:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resolucion :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="237"/>
         <source>Default:</source>
-        <translation type="unfinished"></translation>
+        <translation>Per defaut :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="244"/>
@@ -81,7 +81,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="277"/>
         <source>RGBA order:</source>
-        <translation type="unfinished"></translation>
+        <translation>Òrdre RGBA :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="287"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="320"/>
         <source>Allow volume above 100%</source>
-        <translation type="unfinished"></translation>
+        <translation>Permetre un volum superior a 100%</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="333"/>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="340"/>
         <source>Sound theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tèma sonòr :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="379"/>
@@ -121,22 +121,22 @@
     <message>
         <location filename="../../src/DialogMain.ui" line="430"/>
         <source>Recent files</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichièrs recents</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="442"/>
         <source>Max age:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atge maximum :</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.ui" line="480"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>A prepaus</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="85"/>
         <source>Settings changed</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètres modificats</translation>
     </message>
     <message>
         <location filename="../../src/DialogMain.cpp" line="86"/>
@@ -175,7 +175,7 @@ You can reload the new settings by pressing the Reset button, or use Save if you
         <location filename="../../src/ToolTips.cpp" line="218"/>
         <location filename="../../src/ToolTips.cpp" line="225"/>
         <source>Default value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor per defaut</translation>
     </message>
     <message>
         <location filename="../../src/ToolTips.cpp" line="15"/>
@@ -356,27 +356,27 @@ You can reload the new settings by pressing the Reset button, or use Save if you
     <message>
         <location filename="../../src/DialogAbout.ui" line="39"/>
         <source>Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacion</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.ui" line="90"/>
         <source>Authors</source>
-        <translation type="unfinished"></translation>
+        <translation>Autors</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.ui" line="144"/>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation>Licéncia</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="52"/>
         <source>Author</source>
-        <translation type="unfinished"></translation>
+        <translation>Autor</translation>
     </message>
     <message>
         <location filename="../../src/DialogAbout.cpp" line="57"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>A prepaus</translation>
     </message>
 </context>
 </TS>
